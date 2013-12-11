@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4ad23d1-980d-4973-a709-e28775c509fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/cluster-login.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registration.htm" afterPath="$PROJECT_DIR$/registration.htm" />
     </list>
     <ignored path="cluster-login.iws" />
@@ -34,7 +28,7 @@
       <file leaf-file-name="registration.htm" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/registration.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="207" column="78" selection-start="13996" selection-end="13996" vertical-scroll-proportion="0.724595" vertical-offset="3027" max-vertical-offset="4488">
+            <state line="8" column="69" selection-start="474" selection-end="474" vertical-scroll-proportion="0.20029455" vertical-offset="0" max-vertical-offset="4488">
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -231,7 +225,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/registration.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="78" selection-start="13996" selection-end="13996" vertical-scroll-proportion="0.724595" vertical-offset="3027" max-vertical-offset="4488">
+        <state line="8" column="69" selection-start="474" selection-end="474" vertical-scroll-proportion="0.20029455" vertical-offset="0" max-vertical-offset="4488">
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
