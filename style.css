@@ -1,0 +1,39 @@
+BODY { margin:0px; font-family:Arial,Verdana,Tahoma,'Sans Serif',Monotype,DejaVu; font-size:10pt; background-color:#FFFFFF; color:#000000;}
+
+A:link { text-decoration:none; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; color:#298d9f; }
+A:visited { text-decoration:none; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; color:#298d9f; }
+A:hover { text-decoration:underline; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; color:#000000; }
+
+A:link.news { text-decoration:underline; font-size:8pt; text-align:left; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:normal; color:#606060; }
+A:visited.news { text-decoration:underline; font-size:8pt; text-align:left; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:normal; color:#606060; }
+A:hover.news { text-decoration:none; font-size:8pt; text-align:left; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:normal; color:#000000; }
+
+A:link.lang_select { text-decoration:none; font-family:Arial,Verdana,Tahoma; font-weight:bold; font-size:9pt; color:#808080; }
+A:visited.lang_select { text-decoration:none; font-family:Arial,Verdana,Tahoma; font-weight:bold; font-size:9pt; color:#808080; }
+A:hover.lang_select { text-decoration:underline; font-family:Arial,Verdana,Tahoma; font-weight:bold; font-size:9pt; color:#000000; }
+
+SPAN.lang_select { font-family:Arial,Verdana,Tahoma; font-weight:bold; font-size:9pt; color:#A0A0A0; }
+
+DIV.con_header { font-size:12pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:normal; color:#317384; }
+DIV.con_text { font-size:10pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:normal; color:#606060; padding:0px 0px 0px 10px; }
+
+DIV.news_date { font-size:8pt; text-align:left; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:bold; color:#317384; padding:0px 0px 0px 10px; }
+DIV.news_text { font-size:8pt; text-align:left; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:normal; color:606060; padding:0px 0px 0px 10px; }
+
+
+H1 { font-size:14pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:bold; }
+H2 { font-size:12pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:bold; }
+H3 { font-size:11pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:bold; }
+H4 { font-size:10pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:bold; }
+H5 { font-size:9pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; font-weight:bold; }
+
+LI { padding: 0px; margin: 2px 0px 0px 5px; list-style: square outside url("http://cluster.univ.kiev.ua/images/li.gif"); }
+
+DT { font-size:12pt; font-weight:bold; color:#707070; }
+DD { font-size:10pt; font-weight:normal; color:#404040; }
+
+TD { font-size:10pt; }
+
+INPUT.login { font-size:10pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu,Monotype,DejaVu; font-weight:normal; width:250px; }
+
+INPUT.submitbutton { vertical-align:middle; text-align:center; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; color:#606060; font-weight:bold; font-size:10pt; padding-left:10px; padding-right:10px; }
