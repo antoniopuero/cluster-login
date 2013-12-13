@@ -206,7 +206,7 @@
                                                        maxlength="255" value="<?php echo $resource ?>" type="text"></td>
                                         </tr>
                                         <tr>
-                                            <td><img src="<?php echo $path_to_captcha ?>./?<?php echo session_name() ?>=<?php echo session_id() ?>"></td>
+                                            <td><img src="<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=<?php echo session_id() ?>"></td>
                                             <td><input name="captcha" size="60"
                                                        maxlength="20" value="" type="text"></td>
                                         </tr>
