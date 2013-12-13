@@ -18,7 +18,7 @@ $length = mt_rand(5,7); # random 5 or 6 or 7
 
 # CAPTCHA image size (you do not need to change it, this parameters is optimal)
 $width = 160;
-$height = 80;
+$height = 60;
 
 # symbol's vertical fluctuation amplitude
 $fluctuation_amplitude = 8;
@@ -33,7 +33,7 @@ $black_noise_density=1/30;
 $no_spaces = true;
 
 # show credits
-$show_credits = true; # set to false to remove credits line. Credits adds 12 pixels to image height
+$show_credits = false; # set to false to remove credits line. Credits adds 12 pixels to image height
 $credits = 'www.captcha.ru'; # if empty, HTTP_HOST will be shown
 
 # CAPTCHA image colors (RGB, 0-255)
