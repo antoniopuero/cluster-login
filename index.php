@@ -144,7 +144,7 @@
                             <tr>
                                 <td style="font-weight: bold;">Логін</td>
                                 <td><input name="login" size="60"
-                                           maxlength="255" value="" type="text"></td>
+                                           maxlength="255" value="<?php echo $login ?>" type="text"></td>
                             </tr>
                             <tr>
                                 <td colspan="2">
@@ -214,7 +214,7 @@
                             <tr>
                                 <td style="font-weight: bold;">Підписатися на оновлення</td>
                                 <td><input name="subscribe" size="60"
-                                           maxlength="255" value="" type="checkbox"></td>
+                                           maxlength="255" value="<?php echo $subscrbe ?>" type="checkbox"></td>
                             </tr>
 
                             <tr>
