@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php
 if(count($_POST)>0){
     if(isset($_SESSION['captcha_keystring']) && $_SESSION['captcha_keystring'] === $_POST['captcha']){
@@ -7,6 +8,5 @@ if(count($_POST)>0){
     }
 }
 echo $_SESSION['captcha_keystring'];
-print_r($_POST);
 unset($_SESSION['captcha_keystring']);
 ?>
