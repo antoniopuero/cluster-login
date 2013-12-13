@@ -1,4 +1,4 @@
 <?php
     $path_to_confirm = "./confirm.php";
-    $path_to_captha = "./kcaptcha/index.php";
+    $path_to_captcha = "./kcaptcha/index.php";
 ?>
