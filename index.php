@@ -24,6 +24,7 @@
           content="Обчислювальний кластер Київського національного університету імені Тараса Шевченка. Миттєві обчислення для наукових і прикладних задач. Як стати користувачем"/>
 
     <link href="style.css" rel="stylesheet"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 
 </head>
 <body style="font-family:Arial,Verdana,Tahoma;width: 100%; min-height: 100%;">
