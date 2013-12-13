@@ -1,211 +1,254 @@
-<?xml version="1.0" encoding="windows-1251"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
- <title>Обчислювальний кластер Київського національного університету ім. Т.Шевченка &raquo; Як стати користувачем</title>
-<base href="http://cluster.univ.kiev.ua/ukr/" />
-<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
-<meta http-equiv="content-language" content="ru" />
-<meta name="language" content="uk"/>
-<meta name="robots" content="all"/>
-<meta name="rating" content="general"/>
-<meta name="distribution" content="global"/>
-<meta name="revisit-after" content="10 days"/>
-<meta name="document-state" content="dynamic" />
+    <title>РћР±С‡РёСЃР»СЋРІР°Р»СЊРЅРёР№ РєР»Р°СЃС‚РµСЂ РљРёС—РІСЃСЊРєРѕРіРѕ РЅР°С†С–РѕРЅР°Р»СЊРЅРѕРіРѕ СѓРЅС–РІРµСЂСЃРёС‚РµС‚Сѓ С–Рј. Рў.РЁРµРІС‡РµРЅРєР° &raquo; РЇРє СЃС‚Р°С‚Рё
+        РєРѕСЂРёСЃС‚СѓРІР°С‡РµРј</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-language" content="ru"/>
+    <meta name="language" content="uk"/>
+    <meta name="robots" content="all"/>
+    <meta name="rating" content="general"/>
+    <meta name="distribution" content="global"/>
+    <meta name="revisit-after" content="10 days"/>
+    <meta name="document-state" content="dynamic"/>
 
-<meta name="keywords" content="Як стати користувачем, кластерні технології, паралельні обчислення, розподілені системи, сервери, програмування, Обчислювальний, кластер, Київського, національного, університету, імені, Тараса, Шевченка, миттєві, обчислення, наукові, прикладні, задачі, linux, unix" />
-<meta http-equiv="keywords" content="Як стати користувачем, кластерні технології, паралельні обчислення, розподілені системи, сервери, програмування, Обчислювальний, кластер, Київського, національного, університету, імені, Тараса, Шевченка, миттєві, обчислення, наукові, прикладні, задачі, linux, unix" />
-<meta name="description" content="Обчислювальний кластер Київського національного університету імені Тараса Шевченка. Миттєві обчислення для наукових і прикладних задач. Як стати користувачем" />
-	
-<link href="style.css" rel="stylesheet" />
+    <meta name="keywords"
+          content="РЇРє СЃС‚Р°С‚Рё РєРѕСЂРёСЃС‚СѓРІР°С‡РµРј, РєР»Р°СЃС‚РµСЂРЅС– С‚РµС…РЅРѕР»РѕРіС–С—, РїР°СЂР°Р»РµР»СЊРЅС– РѕР±С‡РёСЃР»РµРЅРЅСЏ, СЂРѕР·РїРѕРґС–Р»РµРЅС– СЃРёСЃС‚РµРјРё, СЃРµСЂРІРµСЂРё, РїСЂРѕРіСЂР°РјСѓРІР°РЅРЅСЏ, РћР±С‡РёСЃР»СЋРІР°Р»СЊРЅРёР№, РєР»Р°СЃС‚РµСЂ, РљРёС—РІСЃСЊРєРѕРіРѕ, РЅР°С†С–РѕРЅР°Р»СЊРЅРѕРіРѕ, СѓРЅС–РІРµСЂСЃРёС‚РµС‚Сѓ, С–РјРµРЅС–, РўР°СЂР°СЃР°, РЁРµРІС‡РµРЅРєР°, РјРёС‚С‚С”РІС–, РѕР±С‡РёСЃР»РµРЅРЅСЏ, РЅР°СѓРєРѕРІС–, РїСЂРёРєР»Р°РґРЅС–, Р·Р°РґР°С‡С–, linux, unix"/>
+    <meta http-equiv="keywords"
+          content="РЇРє СЃС‚Р°С‚Рё РєРѕСЂРёСЃС‚СѓРІР°С‡РµРј, РєР»Р°СЃС‚РµСЂРЅС– С‚РµС…РЅРѕР»РѕРіС–С—, РїР°СЂР°Р»РµР»СЊРЅС– РѕР±С‡РёСЃР»РµРЅРЅСЏ, СЂРѕР·РїРѕРґС–Р»РµРЅС– СЃРёСЃС‚РµРјРё, СЃРµСЂРІРµСЂРё, РїСЂРѕРіСЂР°РјСѓРІР°РЅРЅСЏ, РћР±С‡РёСЃР»СЋРІР°Р»СЊРЅРёР№, РєР»Р°СЃС‚РµСЂ, РљРёС—РІСЃСЊРєРѕРіРѕ, РЅР°С†С–РѕРЅР°Р»СЊРЅРѕРіРѕ, СѓРЅС–РІРµСЂСЃРёС‚РµС‚Сѓ, С–РјРµРЅС–, РўР°СЂР°СЃР°, РЁРµРІС‡РµРЅРєР°, РјРёС‚С‚С”РІС–, РѕР±С‡РёСЃР»РµРЅРЅСЏ, РЅР°СѓРєРѕРІС–, РїСЂРёРєР»Р°РґРЅС–, Р·Р°РґР°С‡С–, linux, unix"/>
+    <meta name="description"
+          content="РћР±С‡РёСЃР»СЋРІР°Р»СЊРЅРёР№ РєР»Р°СЃС‚РµСЂ РљРёС—РІСЃСЊРєРѕРіРѕ РЅР°С†С–РѕРЅР°Р»СЊРЅРѕРіРѕ СѓРЅС–РІРµСЂСЃРёС‚РµС‚Сѓ С–РјРµРЅС– РўР°СЂР°СЃР° РЁРµРІС‡РµРЅРєР°. РњРёС‚С‚С”РІС– РѕР±С‡РёСЃР»РµРЅРЅСЏ РґР»СЏ РЅР°СѓРєРѕРІРёС… С– РїСЂРёРєР»Р°РґРЅРёС… Р·Р°РґР°С‡. РЇРє СЃС‚Р°С‚Рё РєРѕСЂРёСЃС‚СѓРІР°С‡РµРј"/>
+
+    <link href="style.css" rel="stylesheet"/>
 
 </head>
 <body style="font-family:Arial,Verdana,Tahoma;width: 100%; min-height: 100%;">
 
-<table border="0" cellspacing="0" cellpadding="0" style="width:750px; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; background-color:#F3F3F3; margin: auto;">
+<table border="0" cellspacing="0" cellpadding="0"
+       style="width:750px; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; background-color:#F3F3F3; margin: auto;">
 
 
-<tr>
- <td>&nbsp;</td>
- <td>
+    <tr>
+        <td>&nbsp;</td>
+        <td>
 
-<table border="0" cellspacing="2" cellpadding="3" width="100%" style="width:100%; height:100%; background-color:#FEFEFE; border:1px solid #AFAFAF;">
-<tr>
- <td style="text-align:left; background-color:#FFFFFF; vertical-align:top; padding:10px 5px 10px 5px;">
- <div class="con_header">Як стати користувачем</div><br />
- <div class="con_text">
+            <table border="0" cellspacing="2" cellpadding="3" width="100%"
+                   style="width:100%; height:100%; background-color:#FEFEFE; border:1px solid #AFAFAF;">
+                <tr>
+                    <td style="text-align:left; background-color:#FFFFFF; vertical-align:top; padding:10px 5px 10px 5px;">
+                        <div class="con_header">РЇРє СЃС‚Р°С‚Рё РєРѕСЂРёСЃС‚СѓРІР°С‡РµРј</div>
+                        <br/>
 
-<script language="JavaScript" type="text/javascript">
+                        <div class="con_text">
 
-function CheckFields() {
-if(document.formSendMessage.login.value.length<=0) {
-window.alert("Ви не ввели логін. Це погано.");
-document.formSendMessage.login.focus();
-return(false); }
-if(document.formSendMessage.lastname.value.length<=0) {
-window.alert("Ваше прізвище?");
-document.formSendMessage.lastname.focus();
-return(false); }
-if(document.formSendMessage.firstname.value.length<=0) {
-window.alert("Ви забули ввести ваше ім/'я.");
-document.formSendMessage.firstname.focus();
-return(false); }
-if(document.formSendMessage.middlename.value.length<=0) {
-window.alert('Будь ласка, заповніть поле "По-батькові".');
-document.formSendMessage.middlename.focus();
-return(false); }
-if(document.formSendMessage.organization.value.length<=0) {
-window.alert("Ви забули вказати організацію.");
-document.formSendMessage.organization.focus();
-return(false); }
-if(document.formSendMessage.department.value.length<=0) {
-window.alert("Будь ласка, заповніть поле лабораторії.");
-document.formSendMessage.department.focus();
-return(false); }
-if(document.formSendMessage.post.value.length<=0) {
-window.alert("Будь ласка, вкажіть свою посаду.");
-document.formSendMessage.post.focus();
-return(false); }
-if(document.formSendMessage.phone.value.length<=0) {
-window.alert("Будь ласка, вкажіть свій телефонний номер.");
-document.formSendMessage.phone.focus();
-return(false); }
-txt=document.formSendMessage.email.value;
-dog = txt.indexOf("@");
-if (dog == -1) {
-window.alert("В адресі електронної пошти немає символа \"@\".");
-document.formSendMessage.email.focus();
-return(false);
-}
-if (txt.indexOf(".") == -1) {
-window.alert("В адресі електронної пошти немає символа \".\".");
-document.formSendMessage.email.focus();
-return(false);
-}
-if ((dog < 1) || (dog > txt.length - 5)) {
-window.alert("Некоректна адреса електронної пошти?");
-document.formSendMessage.email.focus();
-return(false);
-}
-if ((txt.charAt(dog - 1) == ".") || (txt.charAt(dog + 1) == ".")) {
-window.alert("Некоректна адреса електронної пошти?");
-document.formSendMessage.email.focus();
-return(false);
-}
-if(document.formSendMessage.class.value.length<=0) {
-window.alert("Ви не вказали клас задач.");
-document.formSendMessage.class.focus();
-return(false); }
-if(document.formSendMessage.resource.value.length<=0) {
-window.alert("Ви не вказали необхідні ресурси.");
-document.formSendMessage.resource.focus();
-return(false); }
-}
+                            <script language="JavaScript" type="text/javascript">
 
-</script>
-<p>Щоб отримати доступ до кластера, ви повинні заповнити дану форму.</p>
-<small><p>Будь ласка, вказуйте повну та коректну інформацію. Також намагайтеся вибирати унікальний логін.</p>
-<p>Якщо обраний логін виявиться зайнятим, система реєстрації автоматично додасть до нього кілька цифр. Тому радимо не обирати як логін короткі імена. З міркувань безпеки ми не надаємо інформацію про зайняті логіни, але ви завжди можете <a href="http://cluster.univ.kiev.ua/ukr/contacts">особисто звернутися</a> в лабораторію паралельних обчислень на ІОЦ КНУ і зареєструватися там.</p>
-<p>Реєстраційні дані обов'язково перевіряються адміністраторами.</p>
-</small>
-<form method="post"
- action="http://cluster.univ.kiev.ua/sendmessage.php"
- name="formSendMessage" onsubmit="return CheckFields()">
-  <center>
-  <table style="font-size: 10pt;" border="0"
- cellpadding="2" cellspacing="0">
-    <tbody>
-      <tr>
-        <td style="font-weight: bold;">Логін</td>
-        <td><input name="login" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-<tr><td colspan="2"><small>Будь ласка, уникайте сумнівних символів в полі логіну. Допускаються латинські літери будь-якого регістру, цифри&nbsp;(не&nbsp;на&nbsp;початку&nbsp;логіну) та знак підкреслення.</small></td></tr>
-      <tr>
-        <td style="font-weight: bold;">Прізвище</td>
-        <td><input name="lastname" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Ім'я</td>
-        <td><input name="firstname" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">По-батькові</td>
-        <td><input name="middlename" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Організація</td>
-        <td><input name="organization" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Відділ/лабораторія&nbsp;</td>
-        <td><input name="department" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Посада</td>
-        <td><input name="post" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Телефонний номер</td>
-        <td><input name="phone" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Електропошта</td>
-        <td><input name="email" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Клас задач</td>
-        <td><input name="class" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr>
-        <td style="font-weight: bold;">Необхідні ресурси</td>
-        <td><input name="resource" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr><td colspan="2">
-<small>Орієнтовна потужність та кількість ЦП, об'єми пам'яті, програмне забезпечення.</small>
-</td>
-      </tr>
-<tr>
-        <td style="font-weight: bold;">Додаткове повідомлення для&nbsp;адміністраторів</td>
-        <td><input name="addmsg" size="60"
- maxlength="255" value="" type="text"></td>
-      </tr>
-      <tr><td colspan="2">
-<small><i>Наприклад, так:</i><br>— Дякую адміністраторам кластера за підтримку!<br>— Прошу встановити мені логін FooBar, якщо foobar вже зайнятий.</small>
-</td>
-      </tr>
-      <tr>
-        <td colspan="2" align="right"><input
- class="submitbutton" name="submit_button" value="Відправити"
- type="submit"></td>
-      </tr>
-    </tbody>
-  </table>
-  </center>
-  <input name="hidden_lang" value="ukr" type="hidden">
-</form>
-<br>
-<br>
+                                function CheckFields() {
+                                    if (document.formSendMessage.login.value.length <= 0) {
+                                        window.alert("Р’Рё РЅРµ РІРІРµР»Рё Р»РѕРіС–РЅ. Р¦Рµ РїРѕРіР°РЅРѕ.");
+                                        document.formSendMessage.login.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.lastname.value.length <= 0) {
+                                        window.alert("Р’Р°С€Рµ РїСЂС–Р·РІРёС‰Рµ?");
+                                        document.formSendMessage.lastname.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.firstname.value.length <= 0) {
+                                        window.alert("Р’Рё Р·Р°Р±СѓР»Рё РІРІРµСЃС‚Рё РІР°С€Рµ С–Рј/'СЏ.");
+                                        document.formSendMessage.firstname.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.middlename.value.length <= 0) {
+                                        window.alert('Р‘СѓРґСЊ Р»Р°СЃРєР°, Р·Р°РїРѕРІРЅС–С‚СЊ РїРѕР»Рµ "РџРѕ-Р±Р°С‚СЊРєРѕРІС–".');
+                                        document.formSendMessage.middlename.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.organization.value.length <= 0) {
+                                        window.alert("Р’Рё Р·Р°Р±СѓР»Рё РІРєР°Р·Р°С‚Рё РѕСЂРіР°РЅС–Р·Р°С†С–СЋ.");
+                                        document.formSendMessage.organization.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.department.value.length <= 0) {
+                                        window.alert("Р‘СѓРґСЊ Р»Р°СЃРєР°, Р·Р°РїРѕРІРЅС–С‚СЊ РїРѕР»Рµ Р»Р°Р±РѕСЂР°С‚РѕСЂС–С—.");
+                                        document.formSendMessage.department.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.post.value.length <= 0) {
+                                        window.alert("Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРєР°Р¶С–С‚СЊ СЃРІРѕСЋ РїРѕСЃР°РґСѓ.");
+                                        document.formSendMessage.post.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.phone.value.length <= 0) {
+                                        window.alert("Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРєР°Р¶С–С‚СЊ СЃРІС–Р№ С‚РµР»РµС„РѕРЅРЅРёР№ РЅРѕРјРµСЂ.");
+                                        document.formSendMessage.phone.focus();
+                                        return(false);
+                                    }
+                                    txt = document.formSendMessage.email.value;
+                                    dog = txt.indexOf("@");
+                                    if (dog == -1) {
+                                        window.alert("Р’ Р°РґСЂРµСЃС– РµР»РµРєС‚СЂРѕРЅРЅРѕС— РїРѕС€С‚Рё РЅРµРјР°С” СЃРёРјРІРѕР»Р° \"@\".");
+                                        document.formSendMessage.email.focus();
+                                        return(false);
+                                    }
+                                    if (txt.indexOf(".") == -1) {
+                                        window.alert("Р’ Р°РґСЂРµСЃС– РµР»РµРєС‚СЂРѕРЅРЅРѕС— РїРѕС€С‚Рё РЅРµРјР°С” СЃРёРјРІРѕР»Р° \".\".");
+                                        document.formSendMessage.email.focus();
+                                        return(false);
+                                    }
+                                    if ((dog < 1) || (dog > txt.length - 5)) {
+                                        window.alert("РќРµРєРѕСЂРµРєС‚РЅР° Р°РґСЂРµСЃР° РµР»РµРєС‚СЂРѕРЅРЅРѕС— РїРѕС€С‚Рё?");
+                                        document.formSendMessage.email.focus();
+                                        return(false);
+                                    }
+                                    if ((txt.charAt(dog - 1) == ".") || (txt.charAt(dog + 1) == ".")) {
+                                        window.alert("РќРµРєРѕСЂРµРєС‚РЅР° Р°РґСЂРµСЃР° РµР»РµРєС‚СЂРѕРЅРЅРѕС— РїРѕС€С‚Рё?");
+                                        document.formSendMessage.email.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.class.value.length <= 0) {
+                                        window.alert("Р’Рё РЅРµ РІРєР°Р·Р°Р»Рё РєР»Р°СЃ Р·Р°РґР°С‡.");
+                                        document.formSendMessage.class.focus();
+                                        return(false);
+                                    }
+                                    if (document.formSendMessage.resource.value.length <= 0) {
+                                        window.alert("Р’Рё РЅРµ РІРєР°Р·Р°Р»Рё РЅРµРѕР±С…С–РґРЅС– СЂРµСЃСѓСЂСЃРё.");
+                                        document.formSendMessage.resource.focus();
+                                        return(false);
+                                    }
+                                }
 
-	</div>
-</td>
-</tr>
-</table>
+                            </script>
+                            <p>Р©РѕР± РѕС‚СЂРёРјР°С‚Рё РґРѕСЃС‚СѓРї РґРѕ РєР»Р°СЃС‚РµСЂР°, РІРё РїРѕРІРёРЅРЅС– Р·Р°РїРѕРІРЅРёС‚Рё РґР°РЅСѓ С„РѕСЂРјСѓ.</p>
+                            <small><p>Р‘СѓРґСЊ Р»Р°СЃРєР°, РІРєР°Р·СѓР№С‚Рµ РїРѕРІРЅСѓ С‚Р° РєРѕСЂРµРєС‚РЅСѓ С–РЅС„РѕСЂРјР°С†С–СЋ. РўР°РєРѕР¶ РЅР°РјР°РіР°Р№С‚РµСЃСЏ РІРёР±РёСЂР°С‚Рё
+                                СѓРЅС–РєР°Р»СЊРЅРёР№ Р»РѕРіС–РЅ.</p>
 
- </td>
- <td>&nbsp;</td>
-</tr>
+                                <p>РЇРєС‰Рѕ РѕР±СЂР°РЅРёР№ Р»РѕРіС–РЅ РІРёСЏРІРёС‚СЊСЃСЏ Р·Р°Р№РЅСЏС‚РёРј, СЃРёСЃС‚РµРјР° СЂРµС”СЃС‚СЂР°С†С–С— Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ РґРѕРґР°СЃС‚СЊ РґРѕ
+                                    РЅСЊРѕРіРѕ РєС–Р»СЊРєР° С†РёС„СЂ. РўРѕРјСѓ СЂР°РґРёРјРѕ РЅРµ РѕР±РёСЂР°С‚Рё СЏРє Р»РѕРіС–РЅ РєРѕСЂРѕС‚РєС– С–РјРµРЅР°. Р— РјС–СЂРєСѓРІР°РЅСЊ
+                                    Р±РµР·РїРµРєРё РјРё РЅРµ РЅР°РґР°С”РјРѕ С–РЅС„РѕСЂРјР°С†С–СЋ РїСЂРѕ Р·Р°Р№РЅСЏС‚С– Р»РѕРіС–РЅРё, Р°Р»Рµ РІРё Р·Р°РІР¶РґРё РјРѕР¶РµС‚Рµ <a
+                                            href="http://cluster.univ.kiev.ua/ukr/contacts">РѕСЃРѕР±РёСЃС‚Рѕ Р·РІРµСЂРЅСѓС‚РёСЃСЏ</a> РІ
+                                    Р»Р°Р±РѕСЂР°С‚РѕСЂС–СЋ РїР°СЂР°Р»РµР»СЊРЅРёС… РѕР±С‡РёСЃР»РµРЅСЊ РЅР° Р†РћР¦ РљРќРЈ С– Р·Р°СЂРµС”СЃС‚СЂСѓРІР°С‚РёСЃСЏ С‚Р°Рј.</p>
+
+                                <p>Р РµС”СЃС‚СЂР°С†С–Р№РЅС– РґР°РЅС– РѕР±РѕРІ'СЏР·РєРѕРІРѕ РїРµСЂРµРІС–СЂСЏСЋС‚СЊСЃСЏ Р°РґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂР°РјРё.</p>
+                            </small>
+                            <form method="post"
+                                  action="http://cluster.univ.kiev.ua/sendmessage.php"
+                                  name="formSendMessage" onsubmit="return CheckFields()">
+                                <center>
+                                    <table style="font-size: 10pt;" border="0"
+                                           cellpadding="2" cellspacing="0">
+                                        <tbody>
+                                        <tr>
+                                            <td style="font-weight: bold;">Р›РѕРіС–РЅ</td>
+                                            <td><input name="login" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <small>Р‘СѓРґСЊ Р»Р°СЃРєР°, СѓРЅРёРєР°Р№С‚Рµ СЃСѓРјРЅС–РІРЅРёС… СЃРёРјРІРѕР»С–РІ РІ РїРѕР»С– Р»РѕРіС–РЅСѓ.
+                                                    Р”РѕРїСѓСЃРєР°СЋС‚СЊСЃСЏ Р»Р°С‚РёРЅСЃСЊРєС– Р»С–С‚РµСЂРё Р±СѓРґСЊ-СЏРєРѕРіРѕ СЂРµРіС–СЃС‚СЂСѓ, С†РёС„СЂРё&nbsp;(РЅРµ&nbsp;РЅР°&nbsp;РїРѕС‡Р°С‚РєСѓ&nbsp;Р»РѕРіС–РЅСѓ)
+                                                    С‚Р° Р·РЅР°Рє РїС–РґРєСЂРµСЃР»РµРЅРЅСЏ.
+                                                </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">РџСЂС–Р·РІРёС‰Рµ</td>
+                                            <td><input name="lastname" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Р†Рј'СЏ</td>
+                                            <td><input name="firstname" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">РџРѕ-Р±Р°С‚СЊРєРѕРІС–</td>
+                                            <td><input name="middlename" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">РћСЂРіР°РЅС–Р·Р°С†С–СЏ</td>
+                                            <td><input name="organization" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Р’С–РґРґС–Р»/Р»Р°Р±РѕСЂР°С‚РѕСЂС–СЏ&nbsp;</td>
+                                            <td><input name="department" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">РџРѕСЃР°РґР°</td>
+                                            <td><input name="post" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">РўРµР»РµС„РѕРЅРЅРёР№ РЅРѕРјРµСЂ</td>
+                                            <td><input name="phone" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Р•Р»РµРєС‚СЂРѕРїРѕС€С‚Р°</td>
+                                            <td><input name="email" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">РљР»Р°СЃ Р·Р°РґР°С‡</td>
+                                            <td><input name="class" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">РќРµРѕР±С…С–РґРЅС– СЂРµСЃСѓСЂСЃРё</td>
+                                            <td><input name="resource" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="/kcaptcha/index.php"></td>
+                                            <td><input name="resource" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <small>РћСЂС–С”РЅС‚РѕРІРЅР° РїРѕС‚СѓР¶РЅС–СЃС‚СЊ С‚Р° РєС–Р»СЊРєС–СЃС‚СЊ Р¦Рџ, РѕР±'С”РјРё РїР°Рј'СЏС‚С–, РїСЂРѕРіСЂР°РјРЅРµ
+                                                    Р·Р°Р±РµР·РїРµС‡РµРЅРЅСЏ.
+                                                </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Р”РѕРґР°С‚РєРѕРІРµ РїРѕРІС–РґРѕРјР»РµРЅРЅСЏ РґР»СЏ&nbsp;Р°РґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂС–РІ</td>
+                                            <td><input name="addmsg" size="60"
+                                                       maxlength="255" value="" type="text"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <small><i>РќР°РїСЂРёРєР»Р°Рґ, С‚Р°Рє:</i><br>вЂ” Р”СЏРєСѓСЋ Р°РґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂР°Рј РєР»Р°СЃС‚РµСЂР° Р·Р°
+                                                    РїС–РґС‚СЂРёРјРєСѓ!<br>вЂ” РџСЂРѕС€Сѓ РІСЃС‚Р°РЅРѕРІРёС‚Рё РјРµРЅС– Р»РѕРіС–РЅ FooBar, СЏРєС‰Рѕ foobar РІР¶Рµ
+                                                    Р·Р°Р№РЅСЏС‚РёР№.
+                                                </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" align="right"><input
+                                                    class="submitbutton" name="submit_button" value="Р’С–РґРїСЂР°РІРёС‚Рё"
+                                                    type="submit"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </center>
+                                <input name="hidden_lang" value="ukr" type="hidden">
+                            </form>
+                            <br>
+                            <br>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+        <td>&nbsp;</td>
+    </tr>
 
 
 </table>
