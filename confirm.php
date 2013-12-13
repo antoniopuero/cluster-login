@@ -6,7 +6,7 @@ if(count($_POST)>0){
         echo "Wrong";
     }
 }
-print_r($_SESSION);
+echo $_SESSION['captcha_keystring'];
 print_r($_POST);
 unset($_SESSION['captcha_keystring']);
 ?>
