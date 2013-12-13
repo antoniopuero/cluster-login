@@ -1,4 +1,5 @@
 <?php include('./config.php'); ?>
+<?php session_start(); ?>
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -136,7 +137,7 @@
                             </small>
                             <form method="post"
                                   action="<?php echo $path_to_confirm ?>"
-                                  name="formSendMessage" onsubmit="return CheckFields()">
+                                  name="formSendMessage">
                                 <center>
                                     <table style="font-size: 10pt;" border="0"
                                            cellpadding="2" cellspacing="0">
@@ -162,73 +163,59 @@
                                         <tr>
                                             <td style="font-weight: bold;">Ім'я</td>
                                             <td><input name="firstname" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $firstname ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">По-батькові</td>
                                             <td><input name="middlename" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $middlename ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Організація</td>
                                             <td><input name="organization" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $organization ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Відділ/лабораторія&nbsp;</td>
                                             <td><input name="department" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $department ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Посада</td>
                                             <td><input name="post" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $post ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Телефонний номер</td>
                                             <td><input name="phone" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $phone ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Електропошта</td>
                                             <td><input name="email" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $email ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Клас задач</td>
                                             <td><input name="class" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $class ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Необхідні ресурси</td>
                                             <td><input name="resource" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $resource ?>" type="text"></td>
                                         </tr>
                                         <tr>
-                                            <td><img src="/kcaptcha/index.php"></td>
-                                            <td><input name="resource" size="60"
-                                                       maxlength="255" value="" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <small>Орієнтовна потужність та кількість ЦП, об'єми пам'яті, програмне
-                                                    забезпечення.
-                                                </small>
-                                            </td>
+                                            <td><img src="<?php echo $path_to_captcha ?>./?<?php echo session_name() ?>=<?php echo session_id() ?>"></td>
+                                            <td><input name="captcha" size="60"
+                                                       maxlength="20" value="" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Підписатися на оновлення</td>
                                             <td><input name="subscribe" size="60"
                                                        maxlength="255" value="" type="checkbox"></td>
                                         </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <small><i>Наприклад, так:</i><br>— Дякую адміністраторам кластера за
-                                                    підтримку!<br>— Прошу встановити мені логін FooBar, якщо foobar вже
-                                                    зайнятий.
-                                                </small>
-                                            </td>
-                                        </tr>
+
                                         <tr>
                                             <td colspan="2" align="right"><input
                                                     class="submitbutton" name="submit_button" value="Відправити"

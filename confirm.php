@@ -1,8 +1,10 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: a.savchenko
- * Date: 13.12.13
- * Time: 21:59
- * To change this template use File | Settings | File Templates.
- */
+if(count($_POST)>0){
+    if(isset($_SESSION['captcha_keystring']) && $_SESSION['captcha_keystring'] === $_POST['keystring']){
+        echo "Correct";
+    }else{
+        echo "Wrong";
+    }
+}
+unset($_SESSION['captcha_keystring']);
+?>
