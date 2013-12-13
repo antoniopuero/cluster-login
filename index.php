@@ -1,8 +1,7 @@
 <?php include('./config.php'); ?>
 <?php session_start(); ?>
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Обчислювальний кластер Київського національного університету ім. Т.Шевченка &raquo; Як стати
@@ -32,211 +31,208 @@
        style="width:750px; border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC; background-color:#F3F3F3; margin: auto;">
 
 
-    <tr>
-        <td>&nbsp;</td>
-        <td>
+<tr>
+<td>&nbsp;</td>
+<td>
 
-            <table border="0" cellspacing="2" cellpadding="3" width="100%"
-                   style="width:100%; height:100%; background-color:#FEFEFE; border:1px solid #AFAFAF;">
-                <tr>
-                    <td style="text-align:left; background-color:#FFFFFF; vertical-align:top; padding:10px 5px 10px 5px;">
-                        <div class="con_header">Як стати користувачем</div>
-                        <br/>
+    <table border="0" cellspacing="2" cellpadding="3" width="100%"
+           style="width:100%; height:100%; background-color:#FEFEFE; border:1px solid #AFAFAF;">
+        <tr>
+            <td style="text-align:left; background-color:#FFFFFF; vertical-align:top; padding:10px 5px 10px 5px;">
+                <div class="con_header">Як стати користувачем</div>
+                <br/>
 
-                        <div class="con_text">
+                <div class="con_text">
 
-                            <script language="JavaScript" type="text/javascript">
+                    <script language="JavaScript" type="text/javascript">
 
-                                function CheckFields() {
-                                    if (document.formSendMessage.login.value.length <= 0) {
-                                        window.alert("Ви не ввели логін. Це погано.");
-                                        document.formSendMessage.login.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.lastname.value.length <= 0) {
-                                        window.alert("Ваше прізвище?");
-                                        document.formSendMessage.lastname.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.firstname.value.length <= 0) {
-                                        window.alert("Ви забули ввести ваше ім/'я.");
-                                        document.formSendMessage.firstname.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.middlename.value.length <= 0) {
-                                        window.alert('Будь ласка, заповніть поле "По-батькові".');
-                                        document.formSendMessage.middlename.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.organization.value.length <= 0) {
-                                        window.alert("Ви забули вказати організацію.");
-                                        document.formSendMessage.organization.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.department.value.length <= 0) {
-                                        window.alert("Будь ласка, заповніть поле лабораторії.");
-                                        document.formSendMessage.department.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.post.value.length <= 0) {
-                                        window.alert("Будь ласка, вкажіть свою посаду.");
-                                        document.formSendMessage.post.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.phone.value.length <= 0) {
-                                        window.alert("Будь ласка, вкажіть свій телефонний номер.");
-                                        document.formSendMessage.phone.focus();
-                                        return(false);
-                                    }
-                                    txt = document.formSendMessage.email.value;
-                                    dog = txt.indexOf("@");
-                                    if (dog == -1) {
-                                        window.alert("В адресі електронної пошти немає символа \"@\".");
-                                        document.formSendMessage.email.focus();
-                                        return(false);
-                                    }
-                                    if (txt.indexOf(".") == -1) {
-                                        window.alert("В адресі електронної пошти немає символа \".\".");
-                                        document.formSendMessage.email.focus();
-                                        return(false);
-                                    }
-                                    if ((dog < 1) || (dog > txt.length - 5)) {
-                                        window.alert("Некоректна адреса електронної пошти?");
-                                        document.formSendMessage.email.focus();
-                                        return(false);
-                                    }
-                                    if ((txt.charAt(dog - 1) == ".") || (txt.charAt(dog + 1) == ".")) {
-                                        window.alert("Некоректна адреса електронної пошти?");
-                                        document.formSendMessage.email.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.class.value.length <= 0) {
-                                        window.alert("Ви не вказали клас задач.");
-                                        document.formSendMessage.class.focus();
-                                        return(false);
-                                    }
-                                    if (document.formSendMessage.resource.value.length <= 0) {
-                                        window.alert("Ви не вказали необхідні ресурси.");
-                                        document.formSendMessage.resource.focus();
-                                        return(false);
-                                    }
-                                }
+                        function CheckFields() {
+                            if (document.formSendMessage.login.value.length <= 0) {
+                                window.alert("Ви не ввели логін. Це погано.");
+                                document.formSendMessage.login.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.lastname.value.length <= 0) {
+                                window.alert("Ваше прізвище?");
+                                document.formSendMessage.lastname.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.firstname.value.length <= 0) {
+                                window.alert("Ви забули ввести ваше ім/'я.");
+                                document.formSendMessage.firstname.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.middlename.value.length <= 0) {
+                                window.alert('Будь ласка, заповніть поле "По-батькові".');
+                                document.formSendMessage.middlename.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.organization.value.length <= 0) {
+                                window.alert("Ви забули вказати організацію.");
+                                document.formSendMessage.organization.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.department.value.length <= 0) {
+                                window.alert("Будь ласка, заповніть поле лабораторії.");
+                                document.formSendMessage.department.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.post.value.length <= 0) {
+                                window.alert("Будь ласка, вкажіть свою посаду.");
+                                document.formSendMessage.post.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.phone.value.length <= 0) {
+                                window.alert("Будь ласка, вкажіть свій телефонний номер.");
+                                document.formSendMessage.phone.focus();
+                                return(false);
+                            }
+                            txt = document.formSendMessage.email.value;
+                            dog = txt.indexOf("@");
+                            if (dog == -1) {
+                                window.alert("В адресі електронної пошти немає символа \"@\".");
+                                document.formSendMessage.email.focus();
+                                return(false);
+                            }
+                            if (txt.indexOf(".") == -1) {
+                                window.alert("В адресі електронної пошти немає символа \".\".");
+                                document.formSendMessage.email.focus();
+                                return(false);
+                            }
+                            if ((dog < 1) || (dog > txt.length - 5)) {
+                                window.alert("Некоректна адреса електронної пошти?");
+                                document.formSendMessage.email.focus();
+                                return(false);
+                            }
+                            if ((txt.charAt(dog - 1) == ".") || (txt.charAt(dog + 1) == ".")) {
+                                window.alert("Некоректна адреса електронної пошти?");
+                                document.formSendMessage.email.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.class.value.length <= 0) {
+                                window.alert("Ви не вказали клас задач.");
+                                document.formSendMessage.class.focus();
+                                return(false);
+                            }
+                            if (document.formSendMessage.resource.value.length <= 0) {
+                                window.alert("Ви не вказали необхідні ресурси.");
+                                document.formSendMessage.resource.focus();
+                                return(false);
+                            }
+                        }
 
-                            </script>
-                            <p>Щоб отримати доступ до кластера, ви повинні заповнити дану форму.</p>
-                            <small><p>Будь ласка, вказуйте повну та коректну інформацію. Також намагайтеся вибирати
-                                унікальний логін.</p>
+                    </script>
+                    <p>Щоб отримати доступ до кластера, ви повинні заповнити дану форму.</p>
+                    <small><p>Будь ласка, вказуйте повну та коректну інформацію. Також намагайтеся вибирати
+                            унікальний логін.</p>
 
-                                <p>Якщо обраний логін виявиться зайнятим, система реєстрації автоматично додасть до
-                                    нього кілька цифр. Тому радимо не обирати як логін короткі імена. З міркувань
-                                    безпеки ми не надаємо інформацію про зайняті логіни, але ви завжди можете <a
-                                            href="http://cluster.univ.kiev.ua/ukr/contacts">особисто звернутися</a> в
-                                    лабораторію паралельних обчислень на ІОЦ КНУ і зареєструватися там.</p>
+                        <p>Якщо обраний логін виявиться зайнятим, система реєстрації автоматично додасть до
+                            нього кілька цифр. Тому радимо не обирати як логін короткі імена. З міркувань
+                            безпеки ми не надаємо інформацію про зайняті логіни, але ви завжди можете <a
+                                href="http://cluster.univ.kiev.ua/ukr/contacts">особисто звернутися</a> в
+                            лабораторію паралельних обчислень на ІОЦ КНУ і зареєструватися там.</p>
 
-                                <p>Реєстраційні дані обов'язково перевіряються адміністраторами.</p>
-                            </small>
-                            <form method="post"
-                                  action="<?php echo $path_to_confirm ?>"
-                                  name="formSendMessage">
-                                <center>
-                                    <table style="font-size: 10pt;" border="0"
-                                           cellpadding="2" cellspacing="0">
-                                        <tbody>
-                                        <tr>
-                                            <td style="font-weight: bold;">Логін</td>
-                                            <td><input name="login" size="60"
-                                                       maxlength="255" value="" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <small>Будь ласка, уникайте сумнівних символів в полі логіну.
-                                                    Допускаються латинські літери будь-якого регістру, цифри&nbsp;(не&nbsp;на&nbsp;початку&nbsp;логіну)
-                                                    та знак підкреслення.
-                                                </small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Прізвище</td>
-                                            <td><input name="lastname" size="60"
-                                                       maxlength="255" value="<?php echo $lastname ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Ім'я</td>
-                                            <td><input name="firstname" size="60"
-                                                       maxlength="255" value="<?php echo $firstname ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">По-батькові</td>
-                                            <td><input name="middlename" size="60"
-                                                       maxlength="255" value="<?php echo $middlename ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Організація</td>
-                                            <td><input name="organization" size="60"
-                                                       maxlength="255" value="<?php echo $organization ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Відділ/лабораторія&nbsp;</td>
-                                            <td><input name="department" size="60"
-                                                       maxlength="255" value="<?php echo $department ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Посада</td>
-                                            <td><input name="post" size="60"
-                                                       maxlength="255" value="<?php echo $post ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Телефонний номер</td>
-                                            <td><input name="phone" size="60"
-                                                       maxlength="255" value="<?php echo $phone ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Електропошта</td>
-                                            <td><input name="email" size="60"
-                                                       maxlength="255" value="<?php echo $email ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Клас задач</td>
-                                            <td><input name="class" size="60"
-                                                       maxlength="255" value="<?php echo $class ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Необхідні ресурси</td>
-                                            <td><input name="resource" size="60"
-                                                       maxlength="255" value="<?php echo $resource ?>" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=<?php echo session_id() ?>"></td>
-                                            <td><input name="captcha" size="60"
-                                                       maxlength="20" value="" type="text"></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="font-weight: bold;">Підписатися на оновлення</td>
-                                            <td><input name="subscribe" size="60"
-                                                       maxlength="255" value="" type="checkbox"></td>
-                                        </tr>
+                        <p>Реєстраційні дані обов'язково перевіряються адміністраторами.</p>
+                    </small>
+                    <form method="post"
+                          action="<?php echo $path_to_confirm ?>"
+                          name="formSendMessage">
+                        <table style="font-size: 10pt;" border="0"
+                               cellpadding="2" cellspacing="0">
+                            <tbody>
+                            <tr>
+                                <td style="font-weight: bold;">Логін</td>
+                                <td><input name="login" size="60"
+                                           maxlength="255" value="" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <small>Будь ласка, уникайте сумнівних символів в полі логіну.
+                                        Допускаються латинські літери будь-якого регістру, цифри&nbsp;(не&nbsp;на&nbsp;початку&nbsp;логіну)
+                                        та знак підкреслення.
+                                    </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Прізвище</td>
+                                <td><input name="lastname" size="60"
+                                           maxlength="255" value="<?php echo $lastname ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Ім'я</td>
+                                <td><input name="firstname" size="60"
+                                           maxlength="255" value="<?php echo $firstname ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">По-батькові</td>
+                                <td><input name="middlename" size="60"
+                                           maxlength="255" value="<?php echo $middlename ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Організація</td>
+                                <td><input name="organization" size="60"
+                                           maxlength="255" value="<?php echo $organization ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Відділ/лабораторія&nbsp;</td>
+                                <td><input name="department" size="60"
+                                           maxlength="255" value="<?php echo $department ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Посада</td>
+                                <td><input name="post" size="60"
+                                           maxlength="255" value="<?php echo $post ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Телефонний номер</td>
+                                <td><input name="phone" size="60"
+                                           maxlength="255" value="<?php echo $phone ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Електропошта</td>
+                                <td><input name="email" size="60"
+                                           maxlength="255" value="<?php echo $email ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Клас задач</td>
+                                <td><input name="class" size="60"
+                                           maxlength="255" value="<?php echo $class ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Необхідні ресурси</td>
+                                <td><input name="resource" size="60"
+                                           maxlength="255" value="<?php echo $resource ?>" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><img
+                                        src="<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=<?php echo session_id() ?>">
+                                </td>
+                                <td><input name="captcha" size="60"
+                                           maxlength="20" value="" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Підписатися на оновлення</td>
+                                <td><input name="subscribe" size="60"
+                                           maxlength="255" value="" type="checkbox"></td>
+                            </tr>
 
-                                        <tr>
-                                            <td colspan="2" align="right"><input
-                                                    class="submitbutton" name="submit_button" value="Відправити"
-                                                    type="submit"></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </center>
-                                <input name="hidden_lang" value="ukr" type="hidden">
-                            </form>
-                            <br>
-                            <br>
+                            <tr>
+                                <td colspan="2" align="right"><input
+                                        class="submitbutton" name="submit_button" value="Відправити"
+                                        type="submit"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <input name="hidden_lang" value="ukr" type="hidden">
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>
 
-                        </div>
-                    </td>
-                </tr>
-            </table>
-
-        </td>
-        <td>&nbsp;</td>
-    </tr>
+</td>
+<td>&nbsp;</td>
+</tr>
 
 
 </table>
