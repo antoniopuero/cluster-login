@@ -157,7 +157,7 @@
                                         <tr>
                                             <td style="font-weight: bold;">Прізвище</td>
                                             <td><input name="lastname" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                                       maxlength="255" value="<?php echo $lastname ?>" type="text"></td>
                                         </tr>
                                         <tr>
                                             <td style="font-weight: bold;">Ім'я</td>
@@ -217,9 +217,9 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="font-weight: bold;">Додаткове повідомлення для&nbsp;адміністраторів</td>
-                                            <td><input name="addmsg" size="60"
-                                                       maxlength="255" value="" type="text"></td>
+                                            <td style="font-weight: bold;">Підписатися на оновлення</td>
+                                            <td><input name="subscribe" size="60"
+                                                       maxlength="255" value="" type="checkbox"></td>
                                         </tr>
                                         <tr>
                                             <td colspan="2">
