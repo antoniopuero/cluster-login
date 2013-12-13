@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
 if(count($_POST)>0){
-    if(!isset($_SESSION['captcha_keystring']) && !($_SESSION['captcha_keystring'] === $_POST['captcha'])){ ?>
+    if(!isset($_SESSION['captcha_keystring']) || !($_SESSION['captcha_keystring'] === $_POST['captcha'])){ ?>
         <form action='/index.php' method='post' name='frm'>
         <?php
         foreach ($_POST as $a => $b) {
