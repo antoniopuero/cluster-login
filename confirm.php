@@ -8,7 +8,7 @@ if(count($_POST)>0){
             echo "<input type='hidden' name='".htmlentities($a)."' value='".htmlentities($b)."'>";
         }
         ?>
-            <input type="text" name="error-message" value="Перевірте правильність введення капчі">
+            <input type="hidden" name="message" value="Перевірте правильність введення капчі">
         </form>
         <script>
             document.frm.submit();
