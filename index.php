@@ -242,7 +242,7 @@
 </table>
 <script type="text/javascript">
     (function ($, window) {
-        var img = $('#captha');
+        var img = $('#captcha');
         $('#refresh-captcha').click(function (e) {
             e.preventDefault();
             var src = "<?php echo $path_to_captcha ?>";
