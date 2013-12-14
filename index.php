@@ -206,16 +206,18 @@
                                            maxlength="255" value="<?php echo $resource ?>" type="text"></td>
                             </tr>
                             <tr>
-                                <td><img
+                                <td><img id="captcha"
                                         src="<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=<?php echo session_id() ?>">
                                 </td>
-                                <td><input name="captcha" size="60"
+                                <td>
+                                    <button id="refresh-captcha">оновити</button>
+                                    <input name="captcha" size="60"
                                            maxlength="20" value="" type="text"></td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold;">Підписатися на оновлення</td>
-                                <td><input name="subscribe" size="60"
-                                           maxlength="255" value="<?php echo $subscrbe ?>" type="checkbox"></td>
+                                <td><input name="subscribe" value="<?php echo $subscrbe ?>"
+                                           checked="<?php echo $subscrbe ?>" type="checkbox"></td>
                             </tr>
 
                             <tr>
@@ -238,6 +240,15 @@
 
 
 </table>
-
+<script type="text/javascript">
+    (function ($, window) {
+        var img = $('#captha');
+        $('#refresh-captcha').click(function (e) {
+            e.preventDefault();
+            var src = "<?php echo $path_to_captcha ?>";
+            img.attr('src', src + (new Date).getTime());
+        });
+    })(jQuery, window);
+</script>
 </body>
 </html>
