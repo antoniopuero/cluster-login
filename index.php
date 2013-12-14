@@ -208,13 +208,16 @@
                                 <td><input name="resource" size="60"
                                            maxlength="255" value="<?php echo $resource ?>" type="text"></td>
                             </tr>
+                            <?php if (isset($message)) { ?>
+                                <tr class="error-message"><td colspan="2"><?php echo $message ?></td></tr>
+                            <?php } ?>
                             <tr>
                                 <td><img id="captcha"
                                         src="<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=<?php echo session_id() ?>">
                                 </td>
                                 <td>
                                     <button id="refresh-captcha">Оновити</button><br>
-                                    <input name="captcha" size="60"
+                                    <input id="captcha-string" name="captcha" size="60"
                                            maxlength="20" value="" type="text"></td>
                             </tr>
                             <tr>
@@ -251,6 +254,10 @@
             var src = "<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=";
             img.attr('src', src + (new Date).getTime());
         });
+
+        <?php if (isset($message)) { ?>
+            $('#captcha-string').trigger('focus');
+        <?php } ?>
     })(jQuery, window);
 </script>
 </body>
