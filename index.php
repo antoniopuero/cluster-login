@@ -246,7 +246,7 @@
         $('#refresh-captcha').click(function (e) {
             e.preventDefault();
             var src = "<?php echo $path_to_captcha ?>";
-            img.attr('src', src + (new Date).getTime());
+            img.attr('src', src + '?' + (new Date).getTime());
         });
     })(jQuery, window);
 </script>
