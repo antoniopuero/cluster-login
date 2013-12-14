@@ -8,5 +8,5 @@
  */
 function user_exists ($login) {
     //TODO
-    return false;
+    return true;
 }
