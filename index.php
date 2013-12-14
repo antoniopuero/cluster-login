@@ -145,9 +145,13 @@
                         <table style="font-size: 10pt;" border="0"
                                cellpadding="2" cellspacing="0">
                             <tbody>
+                            <?php if (isset($login_message)) { ?>
+                                <tr class="error-message"><td colspan="2"><?php echo $login_message ?></td></tr>
+                            <?php } ?>
+                            <tr>
                             <tr>
                                 <td style="font-weight: bold;">Логін</td>
-                                <td><input name="login" size="60"
+                                <td><input  id="login-string" name="login" size="60"
                                            maxlength="255" value="<?php echo $login ?>" type="text"></td>
                             </tr>
                             <tr>
@@ -208,8 +212,8 @@
                                 <td><input name="resource" size="60"
                                            maxlength="255" value="<?php echo $resource ?>" type="text"></td>
                             </tr>
-                            <?php if (isset($message)) { ?>
-                                <tr class="error-message"><td colspan="2"><?php echo $message ?></td></tr>
+                            <?php if (isset($captcha_message)) { ?>
+                                <tr class="error-message"><td colspan="2"><?php echo $captcha_message ?></td></tr>
                             <?php } ?>
                             <tr>
                                 <td><img id="captcha"
@@ -254,8 +258,10 @@
             var src = "<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=";
             img.attr('src', src + (new Date).getTime());
         });
-
-        <?php if (isset($message)) { ?>
+        <?php if (isset($login_message)) { ?>
+            $('#login-string').trigger('focus');
+        <?php } ?>
+        <?php if (isset($captcha_message)) { ?>
             $('#captcha-string').trigger('focus');
         <?php } ?>
     })(jQuery, window);
