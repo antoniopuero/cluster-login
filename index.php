@@ -42,6 +42,9 @@
         <tr>
             <td style="text-align:left; background-color:#FFFFFF; vertical-align:top; padding:10px 5px 10px 5px;">
                 <div class="con_header">Як стати користувачем</div>
+                <?php if (isset($message)) { ?>
+                <div class="error-message"><?php echo $message ?></div>
+                <?php } ?>
                 <br/>
 
                 <div class="con_text">
@@ -210,7 +213,7 @@
                                         src="<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=<?php echo session_id() ?>">
                                 </td>
                                 <td>
-                                    <button id="refresh-captcha">оновити</button>
+                                    <button id="refresh-captcha">Оновити</button><br>
                                     <input name="captcha" size="60"
                                            maxlength="20" value="" type="text"></td>
                             </tr>
