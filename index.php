@@ -248,8 +248,8 @@
         var img = $('#captcha');
         $('#refresh-captcha').click(function (e) {
             e.preventDefault();
-            var src = "<?php echo $path_to_captcha ?>";
-            img.attr('src', src + '?' + (new Date).getTime());
+            var src = "<?php echo $path_to_captcha ?>?<?php echo session_name() ?>=";
+            img.attr('src', src + (new Date).getTime());
         });
     })(jQuery, window);
 </script>
