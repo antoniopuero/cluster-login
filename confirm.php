@@ -34,7 +34,7 @@ if (count($_POST) > 0) {
     }
     $today = date("m_d_y+H_i");
     echo $pre_query_folder.$today.'.json';
-    $newfile = fopen($pre_query_folder.'1.json', 'a');
+    $newfile = fopen($pre_query_folder.$today.'.json', 'a');
     fwrite($newfile, json_encode($_POST));
 }
 
