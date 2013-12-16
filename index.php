@@ -231,9 +231,9 @@
                             </tr>
 
                             <tr>
-                                <td colspan="2" align="right"><input
-                                        class="submitbutton" name="submit_button" value="Відправити"
-                                        type="submit"></td>
+                                <td colspan="2" align="right">
+                                    <button class="submitbutton"
+                                        type="submit">Відправити</button></td>
                             </tr>
                             </tbody>
                         </table>

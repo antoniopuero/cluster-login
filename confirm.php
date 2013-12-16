@@ -34,7 +34,7 @@ if (count($_POST) > 0) {
     }
     $today = date("m_d_y+H_i");
     $newfile = fopen($pre_query_folder.$_POST['login'].'+'.$today.'.json', 'a');
-    fwrite($newfile, json_encode($_POST));
+    fwrite($newfile, iconv('UTF-8', 'Windows-1251', json_encode($_POST)));
     fclose($newfile);
 }
 
