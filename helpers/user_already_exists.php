@@ -10,7 +10,8 @@ include('./read_directory.php');
 function user_exists ($login, $pre_query_dir) {
     $files = files_in_directory($pre_query_dir);
     foreach($files as $filename) {
-        if ($login == explode('+', $filename)[0]) {
+        $used_login = explode('+', $filename);
+        if ($login == $used_login[0]) {
             return true;
         }
     }
