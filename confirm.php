@@ -17,7 +17,7 @@ if (count($_POST) > 0) {
         <script>
             document.frm.submit();
         </script>
-    <?php } elseif (user_exists($_POST['login'])) { ?>
+    <?php } elseif (user_exists($_POST['login'], $pre_query_folder)) { ?>
 
         <form action='/index.php' method='post' name='frm'>
             <?php
