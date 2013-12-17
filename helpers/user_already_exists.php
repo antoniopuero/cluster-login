@@ -7,6 +7,5 @@
  * To change this template use File | Settings | File Templates.
  */
 function user_exists ($login) {
-    //TODO
     return false;
 }
