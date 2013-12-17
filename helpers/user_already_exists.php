@@ -6,6 +6,12 @@
  * Time: 11:38 AM
  * To change this template use File | Settings | File Templates.
  */
-function user_exists ($login) {
-    return false;
+include('./read_directory.php');
+function user_exists ($login, $pre_query_dir) {
+    $files = files_in_directory($pre_query_dir);
+    foreach($files as $filename) {
+        if ($login == explode('+', $filename)[0]) {
+            return true;
+        }
+    }
 }
