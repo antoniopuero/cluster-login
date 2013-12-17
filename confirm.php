@@ -41,8 +41,19 @@ if (count($_POST) > 0) {
     $newfile = fopen($pre_query_folder.$_POST['login'].'+'.$today.'.json', 'a');
     fwrite($newfile, iconv('UTF-8', 'Windows-1251', json_encode($_POST)));
     fclose($newfile);
-    print_r(files_in_directory($pre_query_folder));
-}
+//    print_r(files_in_directory($pre_query_folder));
+?>
+    <html>
+    <head>
+        <link rel="stylesheet" src="./style.css">
+        <title>Підтвердження</title>
+    </head>
+    <body>
+        На вашу почту надіслано повідомлення з додатковою інформацією
+        та лінком для підтвердження реєстрації.
+    </body>
+    </html>
 
+<?php }
 unset($_SESSION['captcha_keystring']);
 ?>
