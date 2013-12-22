@@ -6,10 +6,6 @@
  * Time: 11:38 AM
  * To change this template use File | Settings | File Templates.
  */
-if (!function_exists(files_in_directory)) {
-    include('./config.php');
-    include($helpers . 'read_directory.php');
-}
 function user_exists($login, $pre_query_dir, $query_dir)
 {
     $files = files_in_directory($pre_query_dir);
