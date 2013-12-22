@@ -34,6 +34,7 @@ if (count($_POST) > 0) {
 
     <?php
     } else {
+        date_default_timezone_set("Europe/Kiev");
         $today = date("m_d_y+H_i");
         $newfile = fopen($pre_query_folder . $_POST['login'] . '+' . $today . '.json', 'a');
         fwrite($newfile, iconv('UTF-8', 'Windows-1251', json_encode($_POST)));
