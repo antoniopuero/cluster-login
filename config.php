@@ -1,5 +1,5 @@
 <?php
-$base_address = "ldap-dev.cluster.univ.kiev.ua/";
+$base_address = "http://ldap-dev.cluster.univ.kiev.ua/";
 $path_to_request = "./request.php";
 $path_to_confirm = "./confirm.php";
 $path_to_captcha = "./kcaptcha/index.php";

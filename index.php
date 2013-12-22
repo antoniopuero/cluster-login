@@ -227,7 +227,7 @@
                             <tr>
                                 <td style="font-weight: bold;">Підписатися на оновлення</td>
                                 <td><input name="subscribe" value="<?php echo $subscrbe ?>"
-                                           checked="<?php echo $subscrbe ?>" type="checkbox"></td>
+                                           checked="<?php echo $subscirbe ?>" type="checkbox"></td>
                             </tr>
 
                             <tr>
