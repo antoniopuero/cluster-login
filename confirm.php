@@ -35,28 +35,29 @@ if (count($_POST) > 0) {
     <?php
     }
     $today = date("m_d_y+H_i");
-    $newfile = fopen($pre_query_folder.$_POST['login'].'+'.$today.'.json', 'a');
+    $newfile = fopen($pre_query_folder . $_POST['login'] . '+' . $today . '.json', 'a');
     fwrite($newfile, iconv('UTF-8', 'Windows-1251', json_encode($_POST)));
     fclose($newfile);
 
     $path_to_request = delete_logic_path($path_to_request);
-    $link = $base_address.$path_to_request."?login=".$_POST["login"]."&date=".$today;
+    $link = $base_address . $path_to_request . "?login=" . $_POST["login"] . "&date=" . $today;
     mail('antonio.puero@gmail.com', 'subject', $link,
         "From: Cluster team\r\n"
-        ."Reply-To: cluster@cluster.ua\r\n"
-        ."X-Mailer: PHP/" . phpversion());
-?>
+        . "Reply-To: cluster@cluster.ua\r\n"
+        . "X-Mailer: PHP/" . phpversion());
+    ?>
     <html>
     <head>
         <link rel="stylesheet" src="./style.css">
         <title>Підтвердження</title>
     </head>
     <body>
-        На вашу почту надіслано повідомлення з додатковою інформацією
-        та лінком для підтвердження реєстрації.
+    На вашу почту надіслано повідомлення з додатковою інформацією
+    та лінком для підтвердження реєстрації.
     </body>
     </html>
 
-<?php }
+<?php
+}
 unset($_SESSION['captcha_keystring']);
 ?>
