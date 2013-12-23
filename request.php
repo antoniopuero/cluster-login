@@ -3,7 +3,6 @@ extract($_GET);
 include('./config.php');
 $date = str_replace(" ", "+", $date);
 $filename = $login . "+" . $date . ".json";
-echo $filename;
 $path_pre_query = $pre_query_folder . $filename;
 $path_query = $query_folder . $filename;
 if (file_exists($path_pre_query)) {
