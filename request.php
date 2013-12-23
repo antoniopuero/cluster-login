@@ -26,6 +26,14 @@ if (file_exists($path_pre_query)) {
     Ваш профіль вже підтверджено. Чекайте, будь-ласка, на лист від адміністратора.
     </body>
     </html>
-<?php } else {
-
-} ?>
+<?php } else { ?>
+    <html>
+    <head>
+        <link rel="stylesheet" src="./style.css">
+        <title>Не підтверджено</title>
+    </head>
+    <body>
+    Ваш лінк не є робочим. Пройдіть операцію реєстрації заново, або зверніться до адміністратора.
+    </body>
+    </html>
+<?php } ?>
