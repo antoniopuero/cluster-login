@@ -207,7 +207,10 @@
 	$('input[name=login]').inputmask({
 		mask: 'f',
 		repeat: 25,
-		greedy: false
+		greedy: false,
+		onincomplete: function () {
+			console.log(this);
+		}
 	});
 	$('input[name=lastname]').inputmask({
 		mask: 'a',
