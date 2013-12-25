@@ -240,7 +240,7 @@
 		greedy: false
 	});
 	$('input[name=phone]').inputmask({
-		mask: '(999)-999-99-99'
+		mask: '(999) 999-99-99'
 	});
 	$('input[name=email]').inputmask('Regex', { regex: "[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}" });
 	$('input[name=class]').inputmask({
