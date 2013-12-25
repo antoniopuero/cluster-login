@@ -60,7 +60,8 @@
 							</small>
 							<form method="post"
 							      action="<?php echo $path_to_confirm ?>"
-							      name="formSendMessage">
+							      name="formSendMessage"
+								onsubmit="CheckFields()">
 								<table style="font-size: 10pt;" border="0"
 								       cellpadding="2" cellspacing="0">
 									<tbody>
@@ -176,6 +177,84 @@
 
 
 </table>
+<script language="JavaScript" type="text/javascript">
+
+	function CheckFields() {
+		if (document.formSendMessage.login.value.length <= 0) {
+			window.alert("Ви не ввели логін. Це погано.");
+			document.formSendMessage.login.focus();
+			return(false);
+		}
+		if (document.formSendMessage.lastname.value.length <= 0) {
+			window.alert("Ваше прізвище?");
+			document.formSendMessage.lastname.focus();
+			return(false);
+		}
+		if (document.formSendMessage.firstname.value.length <= 0) {
+			window.alert("Ви забули ввести ваше ім/'я.");
+			document.formSendMessage.firstname.focus();
+			return(false);
+		}
+		if (document.formSendMessage.middlename.value.length <= 0) {
+			window.alert('Будь ласка, заповніть поле "По-батькові".');
+			document.formSendMessage.middlename.focus();
+			return(false);
+		}
+		if (document.formSendMessage.organization.value.length <= 0) {
+			window.alert("Ви забули вказати організацію.");
+			document.formSendMessage.organization.focus();
+			return(false);
+		}
+		if (document.formSendMessage.department.value.length <= 0) {
+			window.alert("Будь ласка, заповніть поле лабораторії.");
+			document.formSendMessage.department.focus();
+			return(false);
+		}
+		if (document.formSendMessage.post.value.length <= 0) {
+			window.alert("Будь ласка, вкажіть свою посаду.");
+			document.formSendMessage.post.focus();
+			return(false);
+		}
+		if (document.formSendMessage.phone.value.length <= 0) {
+			window.alert("Будь ласка, вкажіть свій телефонний номер.");
+			document.formSendMessage.phone.focus();
+			return(false);
+		}
+		txt = document.formSendMessage.email.value;
+		dog = txt.indexOf("@");
+		if (dog == -1) {
+			window.alert("В адресі електронної пошти немає символа \"@\".");
+			document.formSendMessage.email.focus();
+			return(false);
+		}
+		if (txt.indexOf(".") == -1) {
+			window.alert("В адресі електронної пошти немає символа \".\".");
+			document.formSendMessage.email.focus();
+			return(false);
+		}
+		if ((dog < 1) || (dog > txt.length - 5)) {
+			window.alert("Некоректна адреса електронної пошти?");
+			document.formSendMessage.email.focus();
+			return(false);
+		}
+		if ((txt.charAt(dog - 1) == ".") || (txt.charAt(dog + 1) == ".")) {
+			window.alert("Некоректна адреса електронної пошти?");
+			document.formSendMessage.email.focus();
+			return(false);
+		}
+		if (document.formSendMessage.class.value.length <= 0) {
+			window.alert("Ви не вказали клас задач.");
+			document.formSendMessage.class.focus();
+			return(false);
+		}
+		if (document.formSendMessage.resource.value.length <= 0) {
+			window.alert("Ви не вказали необхідні ресурси.");
+			document.formSendMessage.resource.focus();
+			return(false);
+		}
+	}
+
+</script>
 <script type="text/javascript">
 	(function ($, window) {
 		var img = $('#captcha');
@@ -207,10 +286,7 @@
 	$('input[name=login]').inputmask({
 		mask: 'f',
 		repeat: 25,
-		greedy: false,
-		onincomplete: function () {
-			console.log(this);
-		}
+		greedy: false
 	});
 	$('input[name=lastname]').inputmask({
 		mask: 'a',
