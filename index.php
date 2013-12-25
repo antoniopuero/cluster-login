@@ -60,8 +60,7 @@
 							</small>
 							<form method="post"
 							      action="<?php echo $path_to_confirm ?>"
-							      name="formSendMessage"
-								onsubmit="CheckFields()">
+							      name="formSendMessage">
 								<table style="font-size: 10pt;" border="0"
 								       cellpadding="2" cellspacing="0">
 									<tbody>
@@ -191,7 +190,7 @@
 			return false;
 		}
 		if (document.formSendMessage.firstname.value.length <= 0) {
-			window.alert("Ви забули ввести ваше ім/'я.");
+			window.alert("Ви забули ввести ваше ім\'я.");
 			document.formSendMessage.firstname.focus();
 			return false;
 		}
@@ -221,23 +220,7 @@
 			return false;
 		}
 		txt = document.formSendMessage.email.value;
-		dog = txt.indexOf("@");
-		if (dog == -1) {
-			window.alert("В адресі електронної пошти немає символа \"@\".");
-			document.formSendMessage.email.focus();
-			return false;
-		}
-		if (txt.indexOf(".") == -1) {
-			window.alert("В адресі електронної пошти немає символа \".\".");
-			document.formSendMessage.email.focus();
-			return false;
-		}
-		if ((dog < 1) || (dog > txt.length - 5)) {
-			window.alert("Некоректна адреса електронної пошти?");
-			document.formSendMessage.email.focus();
-			return false;
-		}
-		if ((txt.charAt(dog - 1) == ".") || (txt.charAt(dog + 1) == ".")) {
+		if (!/[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}/.test(txt)) {
 			window.alert("Некоректна адреса електронної пошти?");
 			document.formSendMessage.email.focus();
 			return false;
@@ -332,6 +315,7 @@
 		repeat: 60,
 		greedy: false
 	});
+	$('form[name=formSendMessage]').sumbit(CheckFields);
 </script>
 </body>
 </html>
