@@ -37,3 +37,7 @@ TD { font-size:10pt; }
 INPUT.login { font-size:10pt; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu,Monotype,DejaVu; font-weight:normal; width:250px; }
 
 INPUT.submitbutton { vertical-align:middle; text-align:center; font-family:Verdana,Tahoma,Arial,'Sans Serif',Monotype,DejaVu; color:#606060; font-weight:bold; font-size:10pt; padding-left:10px; padding-right:10px; }
+
+tr.error-message {
+    background: #db5037;
+}
