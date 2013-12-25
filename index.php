@@ -60,7 +60,8 @@
 							</small>
 							<form method="post"
 							      action="<?php echo $path_to_confirm ?>"
-							      name="formSendMessage">
+							      name="formSendMessage"
+								onsubmit="return CheckFields();">
 								<table style="font-size: 10pt;" border="0"
 								       cellpadding="2" cellspacing="0">
 									<tbody>
@@ -315,7 +316,6 @@
 		repeat: 60,
 		greedy: false
 	});
-	$('form[name=formSendMessage]').sumbit(CheckFields);
 </script>
 </body>
 </html>
