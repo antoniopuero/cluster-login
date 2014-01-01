@@ -3,7 +3,6 @@ session_start();
 $_SESSION['login']=false;
 
 include('./config.php');
-
 if (isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['passwd']) && $_POST['passwd'] != "") {
 //	$connection = ldap_connect($ldaphost, $ldapport);
 //	$ldaprdn = "cn=" . $_POST['username'] . "," . $dc;
