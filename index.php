@@ -24,7 +24,7 @@
 	      content="Обчислювальний кластер Київського національного університету імені Тараса Шевченка. Миттєві обчислення для наукових і прикладних задач. Як стати користувачем"/>
 
 	<link href="style.css" rel="stylesheet"/>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.7.1.js"></script>
 	<script type="text/javascript" src="./js/jquery.inputmask.bundle.min.js"></script>
 
 </head>
@@ -61,7 +61,7 @@
 							<form method="post"
 							      action="<?php echo $path_to_confirm ?>"
 							      name="formSendMessage"
-								onsubmit="return CheckFields();">
+							      onsubmit="return CheckFields();">
 								<table style="font-size: 10pt;" border="0"
 								       cellpadding="2" cellspacing="0">
 									<tbody>
@@ -74,7 +74,9 @@
 									<tr>
 										<td style="font-weight: bold;">Логін</td>
 										<td><input id="login-string" name="login" size="60"
-										           maxlength="255" value="<?php echo $login ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($login)) {
+												echo $login;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td colspan="2">
@@ -87,52 +89,72 @@
 									<tr>
 										<td style="font-weight: bold;">Прізвище</td>
 										<td><input name="lastname" size="60"
-										           maxlength="255" value="<?php echo $lastname ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($lastname)) {
+												echo $lastname;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Ім'я</td>
 										<td><input name="firstname" size="60"
-										           maxlength="255" value="<?php echo $firstname ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($firstname)) {
+												echo $firstname;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">По-батькові</td>
 										<td><input name="middlename" size="60"
-										           maxlength="255" value="<?php echo $middlename ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($middlename)) {
+												echo $middlename;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Організація</td>
 										<td><input name="organization" size="60"
-										           maxlength="255" value="<?php echo $organization ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($organization)) {
+												echo $organization;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Відділ/лабораторія&nbsp;</td>
 										<td><input name="department" size="60"
-										           maxlength="255" value="<?php echo $department ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($department)) {
+												echo $department;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Посада</td>
 										<td><input name="post" size="60"
-										           maxlength="255" value="<?php echo $post ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($post)) {
+												echo $post;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Телефонний номер</td>
 										<td><input name="phone" size="60"
-										           maxlength="255" value="<?php echo $phone ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($phone)) {
+												echo $phone;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Електропошта</td>
-										<td><input name="email" size="60"
-										           maxlength="255" value="<?php echo $email ?>" type="text"></td>
+										<td><input name="mail" size="60"
+										           maxlength="255" value="<?php if (isset($mail)) {
+												echo $mail;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Клас задач</td>
 										<td><input name="class" size="60"
-										           maxlength="255" value="<?php echo $class ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($class)) {
+												echo $class;
+											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Необхідні ресурси</td>
 										<td><input name="resource" size="60"
-										           maxlength="255" value="<?php echo $resource ?>" type="text"></td>
+										           maxlength="255" value="<?php if (isset($resource)) {
+												echo $resource;
+											} ?>" type="text"></td>
 									</tr>
 									<?php if (isset($captcha_message)) { ?>
 										<tr class="error-message">
@@ -151,8 +173,12 @@
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Підписатися на оновлення</td>
-										<td><input name="subscribe" value="<?php echo $subscribe ?>"
-										           checked="<?php echo $subscribe ?>" type="checkbox"></td>
+										<td><input name="subscribe" value="<?php if (isset($subscribe)) {
+												echo $subscribe;
+											} ?>"
+										           checked="<?php if (isset($subscribe)) {
+											           echo $subscribe;
+										           } ?>" type="checkbox"></td>
 									</tr>
 
 									<tr>
@@ -220,10 +246,10 @@
 			document.formSendMessage.phone.focus();
 			return false;
 		}
-		txt = document.formSendMessage.email.value;
-		if (!/[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}/.test(txt)) {
+		txt = document.formSendMessage.mail.value;
+		if (!/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/.test(txt)) {
 			window.alert("Некоректна адреса електронної пошти?");
-			document.formSendMessage.email.focus();
+			document.formSendMessage.mail.focus();
 			return false;
 		}
 		if (document.formSendMessage.class.value.length <= 0) {
@@ -256,6 +282,11 @@
 	})(jQuery, window);
 
 	$.extend($.inputmask.defaults.definitions, {
+		"l": {
+			"validator": "[a-zA-Z0-9_]",
+			"cardinality": 1,
+			"prevalidator": null
+		},
 		"f": {
 			"validator": "[a-zA-Z0-9\(\)\._-]",
 			"cardinality": 1,
@@ -268,7 +299,7 @@
 		},
 	});
 	$('input[name=login]').inputmask({
-		mask: 'f',
+		mask: 'l',
 		repeat: 25,
 		greedy: false
 	});
@@ -303,9 +334,11 @@
 		greedy: false
 	});
 	$('input[name=phone]').inputmask({
-		mask: '(999) 999-99-99'
+		mask: '9',
+		repeat: 11,
+		greedy: false
 	});
-	$('input[name=email]').inputmask('Regex', { regex: "[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}" });
+	$('input[name=mail]').inputmask('Regex', { regex: "[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}" });
 	$('input[name=class]').inputmask({
 		mask: 'i',
 		repeat: 60,

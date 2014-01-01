@@ -7,4 +7,3 @@
             return $path[0];
         }
     }
-?>
