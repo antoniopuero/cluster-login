@@ -2,3 +2,4 @@
 pre-query/
 users-query/
 admin/config.php
+ldap-config.php
