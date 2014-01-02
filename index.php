@@ -173,12 +173,10 @@
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Підписатися на оновлення</td>
-										<td><input name="subscribe" value="<?php if (isset($subscribe)) {
-												echo $subscribe;
-											} ?>"
-										           checked="<?php if (isset($subscribe)) {
-											           echo $subscribe;
-										           } ?>" type="checkbox"></td>
+										<td><input name="subscribe" value="true"
+										           <?php if (isset($subscribe)) {
+											           echo 'checked';
+										           }?> type="checkbox"></td>
 									</tr>
 
 									<tr>

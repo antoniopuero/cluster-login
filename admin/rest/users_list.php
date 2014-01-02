@@ -9,4 +9,3 @@
 include("../config.php");
 include($helpers . "read_directory.php");
 echo json_encode(files_in_directory($query_folder));
-?>

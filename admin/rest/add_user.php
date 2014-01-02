@@ -7,6 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 include("../config.php");
+include("../../ldap-config.php");
 include($helpers . "generate_passwd.php");
 include($helpers . "send_email_to_user.php");
 session_start();
@@ -27,8 +28,8 @@ session_start();
 			$content = file_get_contents($query_folder . "/" . $_POST['filename']);
 			$decoded = array_diff_key(json_decode($content, true), array('captcha' => '', 'hidden_lang' => ''));
 
-			$group_rdn = "cn=" . $decoded['login'] . ",ou=Groups," . $dn;
-			$person_rdn = "cn=" . $decoded['login'] . ",ou=User," . $dn;
+			$group_rdn = "cn=" . $decoded['login'] . ",ou=Groups," . $dc;
+			$person_rdn = "cn=" . $decoded['login'] . ",ou=User," . $dc;
 
 			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
 			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
