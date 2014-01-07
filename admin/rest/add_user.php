@@ -37,17 +37,17 @@ $connection = ldap_connect($ldaphost, $ldapport);
 //			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
 //			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
 			$group = array_diff_key($decoded, array('login' => ''));
-			$group['cn'] = $decoded['login'];
+//			$group['cn'] = $decoded['login'];
 			$group['sn'] = $decoded['firstname'] . " " . $decoded['lastname'];
 			$group['objectClass'] = array('person', 'posixgroup', 'user');
 			$password = generate_password($password_length);
 			$group["passwd"] = $password['passwd_with_salt'];
 
 			$person = array_diff($group, array());
-			$group['ou'] = 'groups';
+//			$group['ou'] = 'groups';
 			$group['gidnumber'] = $max;
 
-			$person['ou'] = 'people';
+//			$person['ou'] = 'people';
 			$person['uidnumber'] = $max;
 			ldap_mod_add($connection, $group_rdn, $group);
 			ldap_mod_add($connection, $person_rdn, $person);
