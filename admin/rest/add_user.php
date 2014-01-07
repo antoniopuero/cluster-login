@@ -36,10 +36,10 @@ $connection = ldap_connect($ldaphost, $ldapport);
 
 //			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
 //			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
-			$group = array_diff_key($decoded, array('login' => ''));
+			$group = array_diff_key($decoded, array('mail' => ''));
 			$group['cn'] = $decoded['login'];
 			$group['sn'] = $decoded['firstname'] . " " . $decoded['lastname'];
-//			$group['objectClass'] = array('posixAccount', 'shadowAccount');
+			$group['objectClass'] = array('posixAccount', 'shadowAccount');
 			$password = generate_password($password_length);
 			$group["passwd"] = $password['passwd_with_salt'];
 
