@@ -101,7 +101,7 @@
 			dataType: 'text',
 			success: function (data) {
 				console.log(data);
-//				closestRow.detach();
+				closestRow.detach();
 			},
 			error: function () {
 				console.log('error');
