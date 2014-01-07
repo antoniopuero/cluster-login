@@ -20,8 +20,8 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$gids = ldap_get_entries($connection, $info);
 			print_r($gids);
 			for ($i = 0, $max = 1001; $i < $gids['count']; $i++) {
-				if (isset($gids[$i]['gid'])) {
-					$temp = $gids[$i]['gid'][0];
+				if (isset($gids[$i]['gidnumber'])) {
+					$temp = $gids[$i]['gidnumber'][0];
 					if (isset($temp) && ($temp < 5000) && ($temp > $max)) {
 						$max = $temp;
 					}
@@ -42,7 +42,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$group["passwd"] = $password['passwd_with_salt'];
 
 			$person = array_diff($group, array());
-			$group['gid'] = $max;
+			$group['gidnumber'] = $max;
 			$person['uid'] = $max;
 
 			ldap_add($connection, $group_rdn, $group);
