@@ -19,7 +19,8 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$info = ldap_search($connection, $_SESSION['ldaprdn'], "(cn=*)");
 			$gids = ldap_get_entries($connection, $info);
 			print_r($gids);
-			for ($i = 0, $max = 1001; $i < $gids['count']; $i++) {
+			$max = 1001;
+			for ($i = 0; $i < $gids['count']; $i++) {
 				if (isset($gids[$i]['gidnumber'])) {
 					$temp = $gids[$i]['gidnumber'][0];
 					if (isset($temp) && ($temp < 5000) && ($temp > $max)) {
