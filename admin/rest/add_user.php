@@ -37,13 +37,14 @@ $connection = ldap_connect($ldaphost, $ldapport);
 //			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
 			$group = array_diff_key($decoded, array('login' => ''));
 			$group['cn'] = $decoded['login'];
+			$group['sn'] = $decoded['firstname'] + $decoded['lastname'];
 			$group['objectClass'] = array('posixAccount', 'shadowAccount');
 			$password = generate_password($password_length);
 			$group["passwd"] = $password['passwd_with_salt'];
 
 			$person = array_diff($group, array());
 			$group['gidnumber'] = $max;
-			$person['uid'] = $max;
+			$person['uidnumber'] = $max;
 
 			ldap_add($connection, $group_rdn, $group);
 			ldap_add($connection, $person_rdn, $person);
