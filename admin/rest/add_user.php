@@ -19,7 +19,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$info = ldap_search($connection, $_SESSION['ldaprdn'], "(cn=*)");
 			$gids = ldap_get_entries($connection, $info);
 			for ($i = 0, $max = 0; $i < $gids['count']; $i++) {
-				$temp = $gids[$i]['gid'];
+				$temp = $gids[$i]['gidNumber'];
 				if (isset($temp) && ($temp > 1000) && ($temp < 5000) && ($temp > $max)) {
 					$max = $temp;
 				}
@@ -32,7 +32,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 
 			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
 			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
-			$group['objectClass'] = array('posixUser', 'person');
+			$group['objectClass'] = array('posixAccount', 'shadowAccount');
 			$password = generate_password($password_length);
 			$group["passwd"] = $password['passwd_with_salt'];
 

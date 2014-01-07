@@ -6,7 +6,7 @@
 
 			Interactive user interface server is accessible via SSH protocol.
 
-			  Server hostname:     grid.ifbg.org.ua
+			  Server hostname:     cluster.univ.kiev.ua
 			  RSA key fingerprint: c5:d1:43:4f:47:1e:13:f1:77:55:c5:31:f4:ae:eb:d6
 
 			Please verify this fingerprint to make sure you are connecting to a legitimate server.
