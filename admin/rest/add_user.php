@@ -36,7 +36,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 
 //			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
 //			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
-			$group = array_diff_key($decoded, array('login' => ''));
+			$group = array_diff_key($decoded, array('login' => '', 'phone'=> ''));
 			$group['cn'] = $decoded['login'];
 			$group['sn'] = $decoded['firstname'] . " " . $decoded['lastname'];
 			$group['objectClass'] = array('posixAccount', 'shadowAccount');
