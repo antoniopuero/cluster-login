@@ -19,9 +19,11 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$info = ldap_search($connection, $_SESSION['ldaprdn'], "(cn=*)");
 			$gids = ldap_get_entries($connection, $info);
 			for ($i = 0, $max = 0; $i < $gids['count']; $i++) {
-				$temp = $gids[$i]['gidNumber'];
-				if (isset($temp) && ($temp > 1000) && ($temp < 5000) && ($temp > $max)) {
-					$max = $temp;
+				if (isset($gids[$i]['gidNumber'])) {
+					$temp = $gids[$i]['gidNumber'];
+					if (($temp > 1000) && ($temp < 5000) && ($temp > $max)) {
+						$max = $temp;
+					}
 				}
 			}
 			$content = file_get_contents($query_folder . "/" . $_POST['filename']);
