@@ -18,10 +18,12 @@ $connection = ldap_connect($ldaphost, $ldapport);
 		if ($ldap_bind) {
 			$info = ldap_search($connection, $_SESSION['ldaprdn'], "(cn=*)");
 			$gids = ldap_get_entries($connection, $info);
-			for ($i = 0, $max = 0; $i < $gids['count']; $i++) {
-				if (isset($gids[$i]['gidNumber'])) {
-					$temp = $gids[$i]['gidNumber'];
-					if (($temp > 1000) && ($temp < 5000) && ($temp > $max)) {
+			print_r($info);
+			print_r($gids);
+			for ($i = 0, $max = 1001; $i < $gids['count']; $i++) {
+				if (isset($gids[$i]['gid'])) {
+					$temp = $gids[$i]['gid'];
+					if (($temp < 5000) && ($temp > $max)) {
 						$max = $temp;
 					}
 				}
@@ -46,9 +48,9 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			ldap_add($connection, $person_rdn, $person);
 			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd']);
 
-			print_r($person);
+//			print_r($person);
 		}
 	}
 ldap_close($connection);
-unlink($query_folder . "/" . $_POST['filename']);
+//unlink($query_folder . "/" . $_POST['filename']);
 echo "OK";
