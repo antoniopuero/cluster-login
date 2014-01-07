@@ -23,10 +23,11 @@ $connection = ldap_connect($ldaphost, $ldapport);
 				if (isset($gids[$i]['gidnumber'])) {
 					$temp = $gids[$i]['gidnumber'][0];
 					if (isset($temp) && ($temp < 5000) && ($temp > $max)) {
-						$max = $temp + 1;
+						$max = $temp;
 					}
 				}
 			}
+			$max += 1;
 			$content = file_get_contents($query_folder . "/" . $_POST['filename']);
 			$decoded = array_diff_key(json_decode($content, true), array('captcha' => '', 'hidden_lang' => ''));
 
