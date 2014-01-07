@@ -16,7 +16,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 		ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
 		$ldap_bind = ldap_bind($connection, $_SESSION['ldaprdn'], $_SESSION['passwd']);
 		if ($ldap_bind) {
-			$info = ldap_search($connection, "o=Cluster,c=US", "(ou=Groups)", array("gid"));
+			$info = ldap_search($connection, "o=ICC Cluster", "(ou=groups)", array("gid"));
 			$gids = ldap_get_entries($connection, $info);
 			for ($i = 0, $max = 0; $i < $gids['count']; $i++) {
 				$temp = $gids[$i]['gid'];
@@ -24,12 +24,11 @@ $connection = ldap_connect($ldaphost, $ldapport);
 					$max = $temp;
 				}
 			}
-			$max = 1001; //This must be deleted
 			$content = file_get_contents($query_folder . "/" . $_POST['filename']);
 			$decoded = array_diff_key(json_decode($content, true), array('captcha' => '', 'hidden_lang' => ''));
 
-			$group_rdn = "cn=" . $decoded['login'] . ",ou=Groups," . $dc;
-			$person_rdn = "cn=" . $decoded['login'] . ",ou=User," . $dc;
+			$group_rdn = "cn=" . $decoded['login'] . ",ou=groups," . $dc;
+			$person_rdn = "cn=" . $decoded['login'] . ",ou=people," . $dc;
 
 			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
 			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
@@ -42,7 +41,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$person['uid'] = $max;
 
 			ldap_add($connection, $group_rdn, $group);
-			ldap_add($connection, $person_rdn, $group);
+			ldap_add($connection, $person_rdn, $person);
 			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd']);
 
 			print_r($person);
