@@ -33,8 +33,10 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$group_rdn = "cn=" . $decoded['login'] . ",ou=groups," . $dc;
 			$person_rdn = "cn=" . $decoded['login'] . ",ou=people," . $dc;
 
-			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
-			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
+//			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
+//			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
+			$group = array_diff_key($decoded, array('login' => ''));
+			$group['cn'] = $decoded['login'];
 			$group['objectClass'] = array('posixAccount', 'shadowAccount');
 			$password = generate_password($password_length);
 			$group["passwd"] = $password['passwd_with_salt'];
