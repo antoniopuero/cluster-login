@@ -18,7 +18,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 		if ($ldap_bind) {
 			$info = ldap_search($connection, $_SESSION['ldaprdn'], "(cn=*)");
 			$gids = ldap_get_entries($connection, $info);
-			print_r($gids);
+//			print_r($gids);
 			for ($i = 0, $max = 1001; $i < $gids['count']; $i++) {
 				if (isset($gids[$i]['gidnumber'])) {
 					$temp = $gids[$i]['gidnumber'][0];
@@ -50,7 +50,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			ldap_add($connection, $person_rdn, $person);
 			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
 
-//			print_r($person);
+			print_r($person);
 		}
 	}
 ldap_close($connection);
