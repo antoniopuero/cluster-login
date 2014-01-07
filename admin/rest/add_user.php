@@ -36,7 +36,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 
 //			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
 //			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
-			$group = array_diff_key($decoded, array('mail' => ''));
+			$group = array_diff_key($decoded, array('login' => ''));
 			$group['cn'] = $decoded['login'];
 			$group['sn'] = $decoded['firstname'] . " " . $decoded['lastname'];
 			$group['objectClass'] = array('posixAccount', 'shadowAccount');
@@ -46,12 +46,10 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$person = array_diff($group, array());
 			$group['gidnumber'] = $max;
 			$person['uidnumber'] = $max;
-
-			ldap_add($connection, $group_rdn, $group);
-			ldap_add($connection, $person_rdn, $person);
+			echo $group_rdn . " " . $person_rdn;
+			ldap_mod_add($connection, $group_rdn, $group);
+			ldap_mod_add($connection, $person_rdn, $person);
 			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
-
-			print_r($person);
 		}
 	}
 ldap_close($connection);
