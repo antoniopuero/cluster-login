@@ -46,7 +46,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$person = array_diff($group, array());
 			$group['gidnumber'] = $max;
 			$person['uidnumber'] = $max;
-			echo $group_rdn . " " . $person_rdn;
+			print_r($connection);
 			ldap_mod_add($connection, $group_rdn, $group);
 			ldap_mod_add($connection, $person_rdn, $person);
 			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
