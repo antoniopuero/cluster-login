@@ -1,4 +1,5 @@
 <?php
+	include('../config.php');
 	function send_email_to_user ($email, $login, $username, $passwd) {
 		$body = "Dear " . $username . "!
 			Your application for user account registration at IFBG cluster has been approved.
