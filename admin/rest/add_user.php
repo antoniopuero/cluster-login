@@ -16,11 +16,11 @@ $connection = ldap_connect($ldaphost, $ldapport);
 		ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
 		$ldap_bind = ldap_bind($connection, $_SESSION['ldaprdn'], $_SESSION['passwd']);
 		if ($ldap_bind) {
-			$info = ldap_search($connection, $ldap_bind, "(ou=groups)", array("gid"));
+			$info = ldap_search($connection, $_SESSION['ldaprdn'], "(cn=*)");
 			$gids = ldap_get_entries($connection, $info);
 			for ($i = 0, $max = 0; $i < $gids['count']; $i++) {
 				$temp = $gids[$i]['gid'];
-				if (($temp > 1000) && ($temp < 5000) && ($temp > $max)) {
+				if (isset($temp) && ($temp > 1000) && ($temp < 5000) && ($temp > $max)) {
 					$max = $temp;
 				}
 			}
