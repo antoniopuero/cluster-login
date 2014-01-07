@@ -4,19 +4,19 @@ $_SESSION['login']=false;
 
 include('./config.php');
 if (isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['passwd']) && $_POST['passwd'] != "") {
-//	$connection = ldap_connect($ldaphost, $ldapport);
-//	$ldaprdn = "cn=" . $_POST['username'] . "," . $dc;
-//	if ($connection) {
-//		$ldap_bind = ldap_bind($connection, $ldaprdn, $_POST['passwd']);
-//		if ($ldap_bind) {
+	$connection = ldap_connect($ldaphost, $ldapport);
+	$ldaprdn = "cn=" . $_POST['username'] . "," . $dc;
+	if ($connection) {
+		$ldap_bind = ldap_bind($connection, $ldaprdn, $_POST['passwd']);
+		if ($ldap_bind) {
 			$_SESSION['login'] = true;
-//			$_SESSION['ldaprdn'] = $ldaprdn;
-//			$_SESSION['passwd'] = $_POST['passwd'];
+			$_SESSION['ldaprdn'] = $ldaprdn;
+			$_SESSION['passwd'] = $_POST['passwd'];
 			$_SESSION['last_time'] = time();
 			header('Location: ./admin.php');
-//		}
-//	}
-//ldap_close($connection);
+		}
+	}
+ldap_close($connection);
 }
 ?>
 <html>
