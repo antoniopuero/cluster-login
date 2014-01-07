@@ -29,7 +29,7 @@ function user_exists($login, $pre_query_dir, $query_dir, $ldaphost, $ldapport) {
 	if ($connection) {
 		ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
 		$info = ldap_search($connection, "o=Cluster,c=US", "(ou=Users)", array("login"));
-		$loginss = ldap_get_entries($connection, $info);
+		$logins = ldap_get_entries($connection, $info);
 		for ($i = 0, $max = 0; $i < $logins['count']; $i++) {
 			$temp = $logins[$i]['login'];
 			if ($login == $temp) {

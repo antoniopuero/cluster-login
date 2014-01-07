@@ -16,7 +16,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 		ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
 		$ldap_bind = ldap_bind($connection, $_SESSION['ldaprdn'], $_SESSION['passwd']);
 		if ($ldap_bind) {
-			$info = ldap_search($connection, "o=ICC Cluster", "(ou=groups)", array("gid"));
+			$info = ldap_search($connection, $ldap_bind, array("gid"));
 			$gids = ldap_get_entries($connection, $info);
 			for ($i = 0, $max = 0; $i < $gids['count']; $i++) {
 				$temp = $gids[$i]['gid'];
