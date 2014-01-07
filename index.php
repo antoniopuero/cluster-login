@@ -239,8 +239,8 @@
 			document.formSendMessage.post.focus();
 			return false;
 		}
-		if (document.formSendMessage.phone.value.length <= 0) {
-			window.alert("Будь ласка, вкажіть свій телефонний номер.");
+		if (document.formSendMessage.phone.value.length < 10) {
+			window.alert("Будь ласка, вкажіть правильний телефонний номер ( наприклад 0634445566).");
 			document.formSendMessage.phone.focus();
 			return false;
 		}
