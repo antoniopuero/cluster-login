@@ -47,7 +47,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 
 			ldap_add($connection, $group_rdn, $group);
 			ldap_add($connection, $person_rdn, $person);
-			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd']);
+			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
 
 //			print_r($person);
 		}

@@ -1,5 +1,5 @@
 <?php
-	function send_email_to_user ($email, $login, $username, $passwd) {
+	function send_email_to_user ($email, $login, $username, $passwd, $cluster_email, $reply_to_whom) {
 		$body = "Dear " . $username . "!
 			Your application for user account registration at IFBG cluster has been approved.
 
