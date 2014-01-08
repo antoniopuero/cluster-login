@@ -33,10 +33,8 @@ $connection = ldap_connect($ldaphost, $ldapport);
 
             $password = generate_password($password_length);
 
-//			$group_rdn = "cn=" . $decoded['firstname'] . " " . $decoded['lastname'] . ",ou=groups," . $dc;
-//			$person_rdn = "cn=" . $decoded['firstname'] . " " . $decoded['lastname'] . ",ou=people," . $dc;
-			$group_rdn = $_SESSION['ldaprdn'];
-			$person_rdn = $_SESSION['ldaprdn'];
+			$group_rdn = "cn=" . $decoded['login'] . ",ou=groups," . $dc;
+			$person_rdn = "uid=" . $decoded['login'] . ",ou=people," . $dc;
             $person = array();
             $person['dn'] = "uid=" . $decoded['login'] . ",ou=people," . $dc;
             $person['uid'] = $decoded['login'];
@@ -70,8 +68,8 @@ $connection = ldap_connect($ldaphost, $ldapport);
             $group['cn'] = $decoded['login'];
 			$group['gidnumber'] = $max;
 
-			ldap_mod_add($connection, $group_rdn, $group);
-			ldap_mod_add($connection, $person_rdn, $person);
+			ldap_add($connection, $group_rdn, $group);
+			ldap_add($connection, $person_rdn, $person);
 			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
 		}
 	}
