@@ -43,7 +43,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
             $person['sn'] = $decoded['middlename'];
 			$person['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
 			$person['gecos'] = $decoded['firstname'] . " " . $decoded['lastname'];
-			$group['objectClass'] = array('inetOrgPerson', 'posixAccount', 'shadowAccount', 'person', 'top');
+			$person['objectClass'] = array('inetOrgPerson', 'posixAccount', 'shadowAccount', 'person', 'top');
             $person['uidNumber'] = $max;
             $person['gidNumber'] = $max;
             $person['userPassword'] = $password['passwd_with_salt'];
@@ -74,5 +74,5 @@ $connection = ldap_connect($ldaphost, $ldapport);
 		}
 	}
 ldap_close($connection);
-//unlink($query_folder . "/" . $_POST['filename']);
+unlink($query_folder . "/" . $_POST['filename']);
 echo "OK";
