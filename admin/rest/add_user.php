@@ -13,7 +13,7 @@ include($helpers . "send_email_to_user.php");
 session_start();
 $connection = ldap_connect($ldaphost, $ldapport);
 	if ($connection) {
-		ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
+//		ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
 		$ldap_bind = ldap_bind($connection, $_SESSION['ldaprdn'], $_SESSION['passwd']);
 		if ($ldap_bind) {
 			$info = ldap_search($connection, $_SESSION['ldaprdn'], "(cn=*)");
