@@ -33,8 +33,10 @@ $connection = ldap_connect($ldaphost, $ldapport);
 
             $password = generate_password($password_length);
 
-			$group_rdn = "cn=" . $decoded['firstname'] . " " . $decoded['lastname'] . ",ou=groups," . $dc;
-			$person_rdn = "cn=" . $decoded['firstname'] . " " . $decoded['lastname'] . ",ou=people," . $dc;
+//			$group_rdn = "cn=" . $decoded['firstname'] . " " . $decoded['lastname'] . ",ou=groups," . $dc;
+//			$person_rdn = "cn=" . $decoded['firstname'] . " " . $decoded['lastname'] . ",ou=people," . $dc;
+			$group_rdn = $_SESSION['ldaprdn'];
+			$person_rdn = $_SESSION['ldaprdn'];
             $person = array();
             $person['dn'] = "uid=" . $decoded['login'] . ",ou=people," . $dc;
             $person['uid'] = $decoded['login'];
