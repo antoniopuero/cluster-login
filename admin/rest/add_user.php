@@ -36,7 +36,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$group_rdn = "cn=" . $decoded['login'] . ",ou=groups," . $dc;
 			$person_rdn = "uid=" . $decoded['login'] . ",ou=people," . $dc;
             $person = array();
-            $person['dn'] = "uid=" . $decoded['login'] . ",ou=people," . $dc;
+//            $person['dn'] = "uid=" . $decoded['login'] . ",ou=people," . $dc;
             $person['uid'] = $decoded['login'];
             $person['displayName'] = $decoded['login'];
             $person['givenName'] = $decoded['firstname'];
@@ -64,7 +64,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 
             $group = array();
             $group['objectClass'] = array('posixGroup');
-            $group['dn'] = "cn=" . $decoded['login'] . ",ou=groups," . $dc;
+//            $group['dn'] = "cn=" . $decoded['login'] . ",ou=groups," . $dc;
             $group['cn'] = $decoded['login'];
 			$group['gidnumber'] = $max;
 

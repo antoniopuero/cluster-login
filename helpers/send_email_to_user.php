@@ -1,7 +1,7 @@
 <?php
 	function send_email_to_user ($email, $login, $username, $passwd, $cluster_email, $reply_to_whom) {
 		$body = "Dear " . $username . "!
-			Your application for user account registration at IFBG cluster has been approved.
+			Your application for user account registration at KNU cluster has been approved.
 
 			Interactive user interface server is accessible via SSH protocol.
 
@@ -20,12 +20,12 @@
 			Note: SSH key-based authentication method is preferred over password authentication.
 
 			Please, make sure you have read and agree to cluster usage policy.
-			  http://grid.ifbg.org.ua/wiki/Policy
+			  http://.org.ua/wiki/Policy
 
 			With Best Regards,
-			  IFBG Cluster Team
+			  KNU Cluster Team
 			";
-		mail($email, "IFBG cluster user account application approved",
+		mail($email, "KNU cluster user account application approved",
 			$body,
 			"From: ". $cluster_email ."\r\n"
 			. "Reply-To: ". $reply_to_whom ."\r\n"
