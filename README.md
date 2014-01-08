@@ -13,4 +13,4 @@ set configs in root folder: `config.php` and `ldap-config.php`; and in admin fol
 	$helpers = "../../helpers/";
 	$password_length = 6; // optional
 	$cluster_email = "email@email.ua";
-	$reply_to_whom = "email@email.ua";```
+	$reply_to_whom = "email@email.ua";

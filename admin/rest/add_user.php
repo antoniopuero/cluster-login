@@ -20,8 +20,8 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$gids = ldap_get_entries($connection, $info);
 //			print_r($gids);
 			for ($i = 0, $max = 1000; $i < $gids['count']; $i++) {
-				if (isset($gids[$i]['gidnumber'])) {
-					$temp = $gids[$i]['gidnumber'][0];
+				if (isset($gids[$i]['uidnumber'])) {
+					$temp = $gids[$i]['uidnumber'][0];
 					if (isset($temp) && ($temp < 5000) && ($temp > $max)) {
 						$max = $temp;
 					}
@@ -31,24 +31,43 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$content = file_get_contents($query_folder . "/" . $_POST['filename']);
 			$decoded = array_diff_key(json_decode($content, true), array('captcha' => '', 'hidden_lang' => ''));
 
-			$group_rdn = "cn=" . $decoded['login'] . ",ou=groups," . $dc;
-			$person_rdn = "cn=" . $decoded['login'] . ",ou=people," . $dc;
+            $password = generate_password($password_length);
 
-//			$group = array_diff_key($decoded, array('firstname' => '', 'lastname' => ''));
-//			$group['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
-			$group = array_diff_key($decoded, array('login' => ''));
-//			$group['cn'] = $decoded['login'];
-			$group['sn'] = $decoded['firstname'] . " " . $decoded['lastname'];
-			$group['objectClass'] = array('person', 'posixgroup', 'user');
-			$password = generate_password($password_length);
-			$group["passwd"] = $password['passwd_with_salt'];
+			$group_rdn = "cn=" . $decoded['firstname'] . " " . $decoded['lastname'] . ",ou=groups," . $dc;
+			$person_rdn = "cn=" . $decoded['firstname'] . " " . $decoded['lastname'] . ",ou=people," . $dc;
+            $person = array();
+            $person['dn'] = "uid=" . $decoded['login'] . ",ou=people," . $dc;
+            $person['uid'] = $decoded['login'];
+            $person['displayName'] = $decoded['login'];
+            $person['givenName'] = $decoded['firstname'];
+            $person['sn'] = $decoded['middlename'];
+			$person['cn'] = $decoded['firstname'] . " " . $decoded['lastname'];
+			$person['gecos'] = $decoded['firstname'] . " " . $decoded['lastname'];
+			$group['objectClass'] = array('inetOrgPerson', 'posixAccount', 'shadowAccount', 'person', 'top');
+            $person['uidNumber'] = $max;
+            $person['gidNumber'] = $max;
+            $person['userPassword'] = $password['passwd_with_salt'];
+            $person['loginShell'] = '/bin/bash';
+            $person['homeDirectory'] = '/home/' . $decoded['login'];
+            $person['shadowExpire'] = -1;
+            $person['shadowFlag'] = 0;
+            $person['shadowWarning'] = 7;
+            $person['shadowMin'] = 0;
+            $person['shadowMax'] = 99999;
+            $person['shadowLastChange'] = 16049;
+            $person['mail'] = $decoded['mail'];
+            $person['telephoneNumber'] = $decoded['phone'];
+            $person['businessCategory'] = $decoded['post'];
+            $person['o'] = $decoded['organization'];
+            $person['ou'] = $decoded['department'];
+            $person['description'] = $decoded['resource'] . " " . $decoded["class"];
 
-			$person = array_diff($group, array());
-//			$group['ou'] = 'groups';
+            $group = array();
+            $group['objectClass'] = array('posixGroup');
+            $group['dn'] = "cn=" . $decoded['login'] . ",ou=groups," . $dc;
+            $group['cn'] = $decoded['login'];
 			$group['gidnumber'] = $max;
 
-//			$person['ou'] = 'people';
-			$person['uidnumber'] = $max;
 			ldap_mod_add($connection, $group_rdn, $group);
 			ldap_mod_add($connection, $person_rdn, $person);
 			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
