@@ -20,7 +20,7 @@
 			Note: SSH key-based authentication method is preferred over password authentication.
 
 			Please, make sure you have read and agree to cluster usage policy.
-			  http://.org.ua/wiki/Policy
+			  http://cluster.univ.kiev.ua/wiki/Policy
 
 			With Best Regards,
 			  KNU Cluster Team

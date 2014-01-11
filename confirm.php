@@ -52,12 +52,12 @@ if (count($_POST) > 0) {
 			. "Content-type: text/html\r\n"
             . "X-Mailer: PHP/" . phpversion());
         ?>
-        <html>
+	    <html style="width: 100%">
         <head>
             <link rel="stylesheet" src="./style.css">
             <title>Підтвердження</title>
         </head>
-        <body>
+        <body style="width: 600px; margin: 50px auto; font-size: 16px;">
         На вашу почту надіслано повідомлення з додатковою інформацією
         та лінком для підтвердження реєстрації.
         </body>

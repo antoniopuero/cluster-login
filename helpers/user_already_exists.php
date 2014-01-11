@@ -31,8 +31,8 @@ function user_exists($login, $pre_query_dir, $query_dir, $ldaphost, $ldapport, $
 		$info = ldap_search($connection, $base_dn, "(cn=*)");
 		$logins = ldap_get_entries($connection, $info);
 		for ($i = 0; $i < $logins['count']; $i++) {
-			if (isset($logins[$i]['login'])) {
-				$temp = $logins[$i]['login'][0];
+			if (isset($logins[$i]['uid'])) {
+				$temp = $logins[$i]['uid'][0];
 				if ($login == $temp) {
 					ldap_close($connection);
 					return true;

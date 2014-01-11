@@ -6,7 +6,7 @@ include('./config.php');
 include("../ldap-config.php");
 if (isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['passwd']) && $_POST['passwd'] != "") {
 	$connection = ldap_connect($ldaphost, $ldapport);
-	$ldaprdn = "cn=" . $_POST['username'] . "," . $dc;
+	$ldaprdn = "cn=" . $_POST['username'] . "," . $base_dn;
 	if ($connection) {
 		$ldap_bind = ldap_bind($connection, $ldaprdn, $_POST['passwd']);
 		if ($ldap_bind) {

@@ -11,4 +11,3 @@ $query_folder = "./users-query/";
 $cluster_email = "cluster@cluter.ua";
 $reply_to_whom = "cluster@cluter.ua";
 include('./ldap-config.php');
-?>

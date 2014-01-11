@@ -26,6 +26,14 @@
 		}
 	});
 
+	var removeInfoRow = function (login) {
+		if (typeof login === "string") {
+			$('[data-for=' + login + ']').detach();
+		} else if (login.detach) {
+			login.detach();
+		}
+	};
+
 	container.delegate('.get-info .btn', 'click', function (e) {
 
 		var self = $(this),
@@ -34,11 +42,11 @@
 
 		if (self.hasClass('btn-warning')) {
 			self.removeClass('btn-warning').addClass('btn-info');
-			closestRow.next('.user-additional-info').detach();
+			removeInfoRow(closestRow.next('.user-additional-info'));
 		} else {
 
 			container.find('.get-info .btn').removeClass('btn-warning').addClass('btn-info');
-			container.find('.user-additional-info').detach();
+			removeInfoRow(container.find('.user-additional-info'));
 
 			$.ajax({
 				url: './rest/user_information.php',
@@ -76,7 +84,8 @@
 				dataType: 'text',
 				success: function (data) {
 					console.log(data);
-					closestRow.detach();
+					removeInfoRow(closestRow.data('login'));
+					removeInfoRow(closestRow);
 				},
 				error: function () {
 					console.log('error');
@@ -101,7 +110,8 @@
 			dataType: 'text',
 			success: function (data) {
 				console.log(data);
-				closestRow.detach();
+				removeInfoRow(closestRow.data('login'));
+				removeInfoRow(closestRow);
 			},
 			error: function () {
 				console.log('error');
