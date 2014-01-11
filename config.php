@@ -1,6 +1,6 @@
 <?php
 $base_address = "http://ldap-dev.cluster.univ.kiev.ua/";
-$base_dn = "cn=admin,dc=cluster,dc=univ,dc=kiev,dc=ua";
+$base_dn = "dc=cluster,dc=univ,dc=kiev,dc=ua";
 $path_to_request = "./request.php";
 $path_to_index = "./index.php";
 $path_to_confirm = "./confirm.php";

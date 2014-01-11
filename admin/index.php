@@ -7,13 +7,11 @@ include("../ldap-config.php");
 if (isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['passwd']) && $_POST['passwd'] != "") {
 	$connection = ldap_connect($ldaphost, $ldapport);
 	$admin_dn = "cn=" . $_POST['username'] . "," . $base_dn;
-	$search_dn = "cn=" . $_POST['username'] . ",ou=groups," . $base_dn;
 	if ($connection) {
 		$ldap_bind = ldap_bind($connection, $admin_dn, $_POST['passwd']);
 		if ($ldap_bind) {
 			$_SESSION['login'] = true;
 			$_SESSION['admin_dn'] = $admin_dn;
-			$_SESSION['search_dn'] = $search_dn;
 			$_SESSION['passwd'] = $_POST['passwd'];
 			$_SESSION['last_time'] = time();
 			header('Location: ./admin.php');
