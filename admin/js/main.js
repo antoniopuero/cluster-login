@@ -34,6 +34,10 @@
 		}
 	};
 
+	var gotSomeTroubles = function (data) {
+		alert("Huston, we got a problem with connection");
+	};
+
 	container.delegate('.get-info .btn', 'click', function (e) {
 
 		var self = $(this),
@@ -60,9 +64,7 @@
 					closestRow.after(newTable);
 					self.removeClass('btn-info').addClass('btn-warning');
 				},
-				error: function () {
-					console.log('error');
-				}
+				error: gotSomeTroubles
 			});
 		}
 
@@ -87,9 +89,7 @@
 					removeInfoRow(closestRow.data('login'));
 					removeInfoRow(closestRow);
 				},
-				error: function () {
-					console.log('error');
-				}
+				error: gotSomeTroubles
 			});
 
 		}
@@ -113,9 +113,7 @@
 				removeInfoRow(closestRow.data('login'));
 				removeInfoRow(closestRow);
 			},
-			error: function () {
-				console.log('error');
-			}
+			error: gotSomeTroubles
 		});
 
 	});

@@ -66,11 +66,19 @@ $connection = ldap_connect($ldaphost, $ldapport);
             $group['cn'] = $decoded['login'];
 			$group['gidNumber'] = $min;
 
-			ldap_add($connection, $group_dn, $group);
-			ldap_add($connection, $person_dn, $person);
-			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
+			$a = ldap_add($connection, $group_dn, $group);
+			$b = ldap_add($connection, $person_dn, $person);
+			if ($a && $b) {
+				send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
+				unlink($query_folder . "/" . $_POST['filename']);
+			} else {
+				header('HTTP/1.0 404 Not Found');
+			}
+		} else {
+			header('HTTP/1.0 404 Not Found');
 		}
+		ldap_close($connection);
+	} else {
+		header('HTTP/1.0 404 Not Found');
 	}
-ldap_close($connection);
-unlink($query_folder . "/" . $_POST['filename']);
 echo "OK";
