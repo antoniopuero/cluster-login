@@ -3,9 +3,8 @@ session_start();
 if (isset($_SESSION['last_time']) && (time() - $_SESSION['last_time'] > 1800)) {
 	session_destroy();
 }
-$is_admin = isset($_SESSION['login']) && $_SESSION['login'];
 
-if ($is_admin) {
+if (isset($_SESSION['login'])) {
 	include('./config.php');
 	?>
 

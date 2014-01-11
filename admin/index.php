@@ -9,7 +9,7 @@ if (isset($_POST['username']) && $_POST['username'] != "" && isset($_POST['passw
 	$admin_dn = "cn=" . $_POST['username'] . "," . $base_dn;
 	$search_dn = "cn=" . $_POST['username'] . ",ou=groups," . $base_dn;
 	if ($connection) {
-		$ldap_bind = ldap_bind($connection, $ldaprdn, $_POST['passwd']);
+		$ldap_bind = ldap_bind($connection, $admin_dn, $_POST['passwd']);
 		if ($ldap_bind) {
 			$_SESSION['login'] = true;
 			$_SESSION['admin_dn'] = $admin_dn;
