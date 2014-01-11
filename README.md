@@ -8,7 +8,7 @@ set configs in root folder: `config.php` and `ldap-config.php`; and in admin fol
 `admin/config.php` should be created. It must contains:
 ```php
 <?php
-	$dc = "dc=basic,dc=example,dc=org";
+	$base_dn = "dc=basic,dc=example,dc=org";
 	$query_folder = "../../pre-query";
 	$helpers = "../../helpers/";
 	$password_length = 6; // optional
