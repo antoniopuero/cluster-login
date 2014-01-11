@@ -3,6 +3,7 @@
 <?php include($helpers . "user_already_exists.php"); ?>
 <?php include($helpers . "read_directory.php"); ?>
 <?php include($helpers . "delete_logic_path.php"); ?>
+<?php include($helpers . "email_is_in_use.php"); ?>
 <?php
 if (count($_POST) > 0) {
     if (!isset($_SESSION['captcha_keystring']) || !($_SESSION['captcha_keystring'] === $_POST['captcha'])) {
@@ -31,6 +32,20 @@ if (count($_POST) > 0) {
         <script>
             document.frm.submit();
         </script>
+
+    <?php } elseif (email_is_in_use($_POST['mail'], $ldaphost, $ldapport, $base_dn)) { ?>
+
+	    <form action='<?php echo $path_to_index; ?>' method='post' name='frm'>
+		    <?php
+		    foreach ($_POST as $a => $b) {
+			    echo "<input type='hidden' name='" . htmlentities($a) . "' value='" . htmlentities($b) . "'>";
+		    }
+		    ?>
+		    <input type="hidden" name="email_message" value="Ця електропошта вже використовується">
+	    </form>
+	    <script>
+		    document.frm.submit();
+	    </script>
 
     <?php
     } else {

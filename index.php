@@ -135,9 +135,14 @@
 												echo $phone;
 											} ?>" type="text"></td>
 									</tr>
+									<?php if (isset($email_message)) { ?>
+										<tr class="error-message">
+											<td colspan="2"><?php echo $email_message ?></td>
+										</tr>
+									<?php } ?>
 									<tr>
 										<td style="font-weight: bold;">Електропошта</td>
-										<td><input name="mail" size="60"
+										<td><input  id="email-string" name="mail" size="60"
 										           maxlength="255" value="<?php if (isset($mail)) {
 												echo $mail;
 											} ?>" type="text"></td>
@@ -276,6 +281,9 @@
 		<?php } ?>
 		<?php if (isset($captcha_message)) { ?>
 		$('#captcha-string').trigger('focus');
+		<?php } ?>
+		<?php if (isset($email_message)) { ?>
+		$('#email-string').trigger('focus');
 		<?php } ?>
 	})(jQuery, window);
 
