@@ -14,9 +14,9 @@ session_start();
 $connection = ldap_connect($ldaphost, $ldapport);
 	if ($connection) {
 		ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
-		$ldap_bind = ldap_bind($connection, $_SESSION['ldaprdn'], $_SESSION['passwd']);
+		$ldap_bind = ldap_bind($connection, $_SESSION['admin_dn'], $_SESSION['passwd']);
 		if ($ldap_bind) {
-			$info = ldap_search($connection, $_SESSION['ldaprdn'], "(cn=*)");
+			$info = ldap_search($connection, $_SESSION['search_dn'], "(cn=*)");
 			$gids = ldap_get_entries($connection, $info);
 			print_r($gids);
 			for ($i = 0, $min = $gid_ranges[0], $max = $gid_ranges[1]; $i < $gids['count']; $i++) {
@@ -34,8 +34,8 @@ $connection = ldap_connect($ldaphost, $ldapport);
 //
 //            $password = generate_password($password_length);
 //
-//			$group_rdn = "cn=" . $decoded['login'] . ",ou=groups," . $base_dn;
-//			$person_rdn = "uid=" . $decoded['login'] . ",ou=people," . $base_dn;
+//			$group_dn = "cn=" . $decoded['login'] . ",ou=groups," . $base_dn;
+//			$person_dn = "uid=" . $decoded['login'] . ",ou=people," . $base_dn;
 //            $person = array();
 //            $person['uid'] = $decoded['login'];
 //            $person['displayName'] = $decoded['login'];
@@ -67,8 +67,8 @@ $connection = ldap_connect($ldaphost, $ldapport);
 //            $group['cn'] = $decoded['login'];
 //			$group['gidNumber'] = $max;
 //
-//			ldap_add($connection, $group_rdn, $group);
-//			ldap_add($connection, $person_rdn, $person);
+//			ldap_add($connection, $group_dn, $group);
+//			ldap_add($connection, $person_dn, $person);
 //			send_email_to_user($decoded['mail'], $decoded['login'], $decoded['firstname'] . " " . $decoded['lastname'], $password['passwd'], $cluster_email, $reply_to_whom);
 		}
 	}
