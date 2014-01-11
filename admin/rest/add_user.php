@@ -16,7 +16,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 		ldap_set_option($connection, LDAP_OPT_PROTOCOL_VERSION, 3);
 		$ldap_bind = ldap_bind($connection, $_SESSION['admin_dn'], $_SESSION['passwd']);
 		if ($ldap_bind) {
-			$info = ldap_search($connection, $base_dn, "(cn=*,ou=groups)");
+			$info = ldap_search($connection, $base_dn, "(cn=*)");
 			$gids = ldap_get_entries($connection, $info);
 			print_r($gids);
 			for ($i = 0, $min = $gid_ranges[0], $max = $gid_ranges[1]; $i < $gids['count']; $i++) {
@@ -30,7 +30,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$min += 1;
 			echo $min;
 //			$content = file_get_contents($query_folder . "/" . $_POST['filename']);
-//			$decoded = array_diff_key(json_decode($content, true), array('captcha' => '', 'hidden_lang' => ''));
+//			$decoded = json_decode($content, true);
 //
 //            $password = generate_password($password_length);
 //
