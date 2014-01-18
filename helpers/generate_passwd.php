@@ -13,6 +13,10 @@ function generate_password ($length = 8) {
 		$index = rand(0, $count - 1);
 		$result .= substr($chars, $index, 1);
 	}
-	$passwd_with_salt = "{sha1}" . base64_encode(sha1($result, true));
+	for ($i = 0, $salt = ''; $i < $length; $i++) {
+		$index = rand(0, $count - 1);
+		$salt .= substr($chars, $index, 1);
+	}
+	$passwd_with_salt = "{sha1}{" . $salt . "}" . base64_encode(crypt($result, $salt));
 	return array('passwd' => $result, 'passwd_with_salt' => $passwd_with_salt);
 }

@@ -100,21 +100,24 @@
 
 		var self = $(this),
 			closestRow = self.closest('tr'),
-			filename = closestRow.data('file');
-		$.ajax({
-			url: './rest/add_user.php',
-			type: 'post',
-			data: {
-				filename: filename
-			},
-			dataType: 'text',
-			success: function (data) {
-				console.log(data);
-				removeInfoRow(closestRow.data('login'));
-				removeInfoRow(closestRow);
-			},
-			error: gotSomeTroubles
-		});
+			filename = closestRow.data('file'),
+			login = closestRow.data('login'),
+			data = $('[data-for=' + login + ']').serializeArray();
+		console.log(data);
+//		$.ajax({
+//			url: './rest/add_user.php',
+//			type: 'post',
+//			data: {
+//				filename: filename
+//			},
+//			dataType: 'text',
+//			success: function (data) {
+//				console.log(data);
+//				removeInfoRow(login);
+//				removeInfoRow(closestRow);
+//			},
+//			error: gotSomeTroubles
+//		});
 
 	});
 })(document, window, jQuery);

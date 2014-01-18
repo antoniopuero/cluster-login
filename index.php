@@ -250,7 +250,7 @@
 			return false;
 		}
 		txt = document.formSendMessage.mail.value;
-		if (!/^[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,4}$/.test(txt)) {
+		if (!/^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$/.test(txt)) {
 			window.alert("Некоректна адреса електронної пошти?");
 			document.formSendMessage.mail.focus();
 			return false;
@@ -299,7 +299,7 @@
 			"prevalidator": null
 		},
 		"i": {
-			"validator": "[a-zA-Zа-яА-ЯІіЇї -]",
+			"validator": "[a-zA-Zа-яА-Я0-9ІіЇї -]",
 			"cardinality": 1,
 			"prevalidator": null
 		},
@@ -344,7 +344,7 @@
 		repeat: 11,
 		greedy: false
 	});
-	$('input[name=mail]').inputmask('Regex', { regex: "[a-zA-Z0-9._%-]+@[a-zA-Z0-9-]+\\.[a-zA-Z]{2,4}" });
+	$('input[name=mail]').inputmask('Regex', { regex: "([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))" });
 	$('input[name=class]').inputmask({
 		mask: 'i',
 		repeat: 60,

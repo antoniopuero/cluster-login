@@ -4,6 +4,32 @@
 App = {};
 App.Templates || (App.Templates = {});
 
+App.Templates.userInform = function(obj){
+var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
+with(obj||{}){
+__p+='<tr class="user-additional-info" data-for="'+
+((__t=( login ))==null?'':__t)+
+'">\r\n    <td colspan="4">\r\n        <div class="container-fluid">\r\n            <div class="row-fluid">\r\n                <div class="span1 info-cell">\r\n                    <h5>Firstname</h5>\r\n                    <div class="row-fluid"><input name="firstname" value="'+
+((__t=( firstname ))==null?'':__t)+
+'"></div>\r\n                </div>\r\n                <div class="span1 info-cell">\r\n                    <h5>Lastname</h5>\r\n                    <div class="row-fluid"><input name="lastname" value="'+
+((__t=( lastname ))==null?'':__t)+
+'"></div>\r\n                </div>\r\n                <div class="span1 info-cell">\r\n                    <h5>Middlename</h5>\r\n                    <div class="row-fluid"><input name="middlename" value="'+
+((__t=( middlename ))==null?'':__t)+
+'"></div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Organization</h5>\r\n                    <div class="row-fluid"><input name="organization" value="'+
+((__t=( organization ))==null?'':__t)+
+'"></div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Department</h5>\r\n                    <div class="row-fluid"><input name="department" value="'+
+((__t=( department ))==null?'':__t)+
+'"></div>\r\n                </div>\r\n                <div class="span1 info-cell">\r\n                    <h5>Post</h5>\r\n                    <div class="row-fluid"><input name="post" value="'+
+((__t=( post ))==null?'':__t)+
+'"></div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Phone</h5>\r\n                    <div class="row-fluid"><input name="phone" value="'+
+((__t=( phone ))==null?'':__t)+
+'"></div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Resource</h5>\r\n                    <div class="row-fluid"><input name="resource" value="'+
+((__t=( resource ))==null?'':__t)+
+'"></div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </td>\r\n</tr>';
+}
+return __p;
+};
+
 App.Templates.actionRow = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
@@ -24,28 +50,6 @@ with(obj||{}){
 __p+='<table class="table table-bordered">\r\n <thead>\r\n    <tr>\r\n        <th>Login</th>\r\n        <th>Get info</th>\r\n        <th>Add user</th>\r\n        <th>Delete user</th>\r\n    </tr>\r\n </thead>\r\n    <tbody>\r\n       '+
 ((__t=( renderRows(userList) ))==null?'':__t)+
 '\r\n    </tbody>\r\n</table>';
-}
-return __p;
-};
-
-App.Templates.userInform = function(obj){
-var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
-with(obj||{}){
-__p+='<tr class="user-additional-info" data-for="'+
-((__t=( login ))==null?'':__t)+
-'">\r\n    <td colspan="4">\r\n        <div class="container-fluid">\r\n            <div class="row-fluid">\r\n                <div class="span2 info-cell">\r\n                    <h5>Firstname</h5>\r\n                    <div class="row-fluid">'+
-((__t=( firstname ))==null?'':__t)+
-'</div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Lastname</h5>\r\n                    <div class="row-fluid">'+
-((__t=( lastname ))==null?'':__t)+
-'</div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Middlename</h5>\r\n                    <div class="row-fluid">'+
-((__t=( middlename ))==null?'':__t)+
-'</div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Organization</h5>\r\n                    <div class="row-fluid">'+
-((__t=( organization ))==null?'':__t)+
-'</div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Department</h5>\r\n                    <div class="row-fluid">'+
-((__t=( department ))==null?'':__t)+
-'</div>\r\n                </div>\r\n                <div class="span2 info-cell">\r\n                    <h5>Post</h5>\r\n                    <div class="row-fluid">'+
-((__t=( post ))==null?'':__t)+
-'</div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </td>\r\n</tr>';
 }
 return __p;
 };

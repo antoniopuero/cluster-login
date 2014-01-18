@@ -7,15 +7,15 @@
  * To change this template use File | Settings | File Templates.
  */
 function user_exists($login, $pre_query_dir, $query_dir, $ldaphost, $ldapport, $base_dn) {
-    $files = files_in_directory($pre_query_dir);
-    if (!!$files) {
-        foreach ($files as $filename) {
-            $used_login = explode('+', $filename);
-            if ($login == $used_login[0]) {
-                return true;
-            }
-        }
-    }
+//    $files = files_in_directory($pre_query_dir);
+//    if (!!$files) {
+//        foreach ($files as $filename) {
+//            $used_login = explode('+', $filename);
+//            if ($login == $used_login[0]) {
+//                return true;
+//            }
+//        }
+//    }
     $files = files_in_directory($query_dir);
     if (!!$files) {
         foreach ($files as $filename) {
