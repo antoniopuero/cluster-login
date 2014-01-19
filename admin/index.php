@@ -37,6 +37,9 @@ ldap_close($connection);
 		.margin-body label {
 			text-align: right;
 		}
+		.user-additional-info input {
+			width: 95%;
+		}
 	</style>
 	<div class="span4 offset4 margin-body">
 		<form class="form-actions" method="POST">
