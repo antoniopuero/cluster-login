@@ -36,6 +36,7 @@
 
 	var gotSomeTroubles = function (data) {
 		alert("Huston, we got a problem with connection");
+		console.log(data);
 	};
 
 	container.delegate('.get-info .btn', 'click', function (e) {
