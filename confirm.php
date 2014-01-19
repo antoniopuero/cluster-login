@@ -11,7 +11,7 @@ if (count($_POST) > 0) {
         <form action='<?php echo $path_to_index; ?>' method='post' name='frm'>
             <?php
             foreach ($_POST as $a => $b) {
-                echo "<input type='hidden' name='" . htmlentities($a) . "' value='" . htmlentities($b) . "'>";
+                echo "<input type='hidden' name='" . htmlentities($a) . "' value='" . base64_encode(htmlentities($b)) . "'>";
             }
             ?>
             <input type="hidden" name="captcha_message" value="Перевірте правильність введення капчі">
@@ -24,7 +24,7 @@ if (count($_POST) > 0) {
         <form action='<?php echo $path_to_index; ?>' method='post' name='frm'>
             <?php
             foreach ($_POST as $a => $b) {
-                echo "<input type='hidden' name='" . htmlentities($a) . "' value='" . htmlentities($b) . "'>";
+                echo "<input type='hidden' name='" . htmlentities($a) . "' value='" . base64_encode(htmlentities($b)) . "'>";
             }
             ?>
             <input type="hidden" name="login_message" value="Юзер з таким логіном уже існує">
@@ -38,7 +38,7 @@ if (count($_POST) > 0) {
 	    <form action='<?php echo $path_to_index; ?>' method='post' name='frm'>
 		    <?php
 		    foreach ($_POST as $a => $b) {
-			    echo "<input type='hidden' name='" . htmlentities($a) . "' value='" . htmlentities($b) . "'>";
+			    echo "<input type='hidden' name='" . htmlentities($a) . "' value='" . base64_encode(htmlentities($b)) . "'>";
 		    }
 		    ?>
 		    <input type="hidden" name="email_message" value="Ця електропошта вже використовується">

@@ -75,7 +75,7 @@
 										<td style="font-weight: bold;">Логін</td>
 										<td><input id="login-string" name="login" size="60"
 										           maxlength="255" value="<?php if (isset($login)) {
-												echo $login;
+												echo base64_decode($login);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
@@ -90,49 +90,49 @@
 										<td style="font-weight: bold;">Прізвище</td>
 										<td><input name="lastname" size="60"
 										           maxlength="255" value="<?php if (isset($lastname)) {
-												echo $lastname;
+												echo base64_decode($lastname);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Ім'я</td>
 										<td><input name="firstname" size="60"
 										           maxlength="255" value="<?php if (isset($firstname)) {
-												echo $firstname;
+												echo base64_decode($firstname);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">По-батькові</td>
 										<td><input name="middlename" size="60"
 										           maxlength="255" value="<?php if (isset($middlename)) {
-												echo $middlename;
+												echo base64_decode($middlename);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Організація</td>
 										<td><input name="organization" size="60"
 										           maxlength="255" value="<?php if (isset($organization)) {
-												echo $organization;
+												echo base64_decode($organization);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Відділ/лабораторія&nbsp;</td>
 										<td><input name="department" size="60"
 										           maxlength="255" value="<?php if (isset($department)) {
-												echo $department;
+												echo base64_decode($department);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Посада</td>
 										<td><input name="post" size="60"
 										           maxlength="255" value="<?php if (isset($post)) {
-												echo $post;
+												echo base64_decode($post);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Телефонний номер</td>
 										<td><input name="phone" size="60"
 										           maxlength="255" value="<?php if (isset($phone)) {
-												echo $phone;
+												echo base64_decode($phone);
 											} ?>" type="text"></td>
 									</tr>
 									<?php if (isset($email_message)) { ?>
@@ -144,21 +144,21 @@
 										<td style="font-weight: bold;">Електропошта</td>
 										<td><input  id="email-string" name="mail" size="60"
 										           maxlength="255" value="<?php if (isset($mail)) {
-												echo $mail;
+												echo base64_decode($mail);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Клас задач</td>
 										<td><input name="class" size="60"
 										           maxlength="255" value="<?php if (isset($class)) {
-												echo $class;
+												echo base64_decode($class);
 											} ?>" type="text"></td>
 									</tr>
 									<tr>
 										<td style="font-weight: bold;">Необхідні ресурси</td>
 										<td><input name="resource" size="60"
 										           maxlength="255" value="<?php if (isset($resource)) {
-												echo $resource;
+												echo base64_decode($resource);
 											} ?>" type="text"></td>
 									</tr>
 									<?php if (isset($captcha_message)) { ?>
