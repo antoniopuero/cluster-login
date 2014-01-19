@@ -25,6 +25,9 @@ if (isset($_SESSION['login'])) {
 			font-weight: bold;
 			font-style: italic;
 		}
+		.user-additional-info input {
+			width: 95%;
+		}
 	</style>
 	<body>
 	<div class="navbar navbar-static-top">
