@@ -67,7 +67,7 @@ $connection = ldap_connect($ldaphost, $ldapport);
             $group['objectClass'] = array('posixGroup');
             $group['cn'] = $decoded['login'];
 			$group['gidNumber'] = $min;
-
+			print_r($person);
 			$a = ldap_add($connection, $group_dn, $group);
 			$b = ldap_add($connection, $person_dn, $person);
 			if ($a && $b) {

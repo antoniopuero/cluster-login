@@ -17,6 +17,8 @@ if (isset($_SESSION['login'])) {
 	<style>
 		.user-additional-info .info-cell {
 			border-right: 1px solid #ddd;
+		}
+		.user-additional-info h4 {
 			font-size: 12px;
 		}
 		.user-additional-info .info-cell:last-child {

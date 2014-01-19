@@ -8,6 +8,16 @@
  */
 
 include("../config.php");
-
-unlink($query_folder . "/" . $_POST['filename']);
+$filename = $query_folder . "/" . $_POST['filename'];
+$decoded = json_decode($filename, true);
+$message_body = "
+	    <h3>Dear " . $decoded['firstname'] . " " . $decoded['lastname'] . ",</h3>
+	     <div>Your registration information was declined.</div>";
+	mail($decoded['mail'], 'Cluster account failed', $message_body,
+	"From: Cluster team\r\n"
+	. "Reply-To: cluster@cluster.ua\r\n"
+	. "Content-type: text/html\r\n"
+	. "X-Mailer: PHP/" . phpversion());
+?>
+unlink($filename);
 echo "OK";
