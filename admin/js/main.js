@@ -107,21 +107,18 @@
 		dataFields.each(function () {
 			result[this.name] = this.value;
 		});
-		console.log(result);
-//		$.ajax({
-//			url: './rest/add_user.php',
-//			type: 'post',
-//			data: {
-//				filename: filename
-//			},
-//			dataType: 'text',
-//			success: function (data) {
-//				console.log(data);
-//				removeInfoRow(login);
-//				removeInfoRow(closestRow);
-//			},
-//			error: gotSomeTroubles
-//		});
+		$.ajax({
+			url: './rest/add_user.php',
+			type: 'post',
+			data: result,
+			dataType: 'text',
+			success: function (data) {
+				console.log(data);
+				removeInfoRow(login);
+				removeInfoRow(closestRow);
+			},
+			error: gotSomeTroubles
+		});
 
 	});
 })(document, window, jQuery);

@@ -31,6 +31,8 @@ $connection = ldap_connect($ldaphost, $ldapport);
 			$content = file_get_contents($query_folder . "/" . $_POST['filename']);
 			$decoded = json_decode($content, true);
 
+			$decoded = array_merge($decoded, $_POST);
+
             $password = generate_password($password_length);
 
 			$group_dn = "cn=" . $decoded['login'] . ",ou=groups," . $base_dn;
