@@ -101,10 +101,13 @@
 
 		var self = $(this),
 			closestRow = self.closest('tr'),
-			filename = closestRow.data('file'),
 			login = closestRow.data('login'),
-			data = $('[data-for=' + login + ']').serializeArray();
-		console.log(data);
+			dataFields = $('[data-for=' + login + '] input'),
+			result = {filename: closestRow.data('file')};
+		dataFields.each(function () {
+			result[this.name] = this.value;
+		});
+		console.log(result);
 //		$.ajax({
 //			url: './rest/add_user.php',
 //			type: 'post',
