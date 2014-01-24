@@ -9,7 +9,7 @@
 
 include("../config.php");
 $filename = $query_folder . "/" . $_POST['filename'];
-$decoded = json_decode($filename, true);
+$decoded = json_decode(file_get_contents($filename), true);
 $message_body = "
 	    <h3>Dear " . $decoded['firstname'] . " " . $decoded['lastname'] . ",</h3>
 	     <div>Your registration information was declined.</div>";
