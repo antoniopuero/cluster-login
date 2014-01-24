@@ -347,10 +347,7 @@
 			repeat: 25,
 			greedy: false
 		});
-		$('input[name=phone]').inputmask({
-			mask: '+38 (099) 999 99 99',
-			autoUnmask: true
-		});
+		$('input[name=phone]').inputmask('regex', { regex: "\\+?\\d{0,13}" });
 		$('input[name=class]').inputmask({
 			mask: 'i',
 			autoUnmask: true,
