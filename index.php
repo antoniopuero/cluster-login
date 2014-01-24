@@ -302,56 +302,66 @@
 			"validator": "[a-zA-Zа-яА-Я0-9ІіЇї -]",
 			"cardinality": 1,
 			"prevalidator": null
-		},
+		}
 	});
 	$('input[name=login]').inputmask({
 		mask: 'l',
+		autoUnmask: true,
 		repeat: 25,
 		greedy: false
 	});
 	$('input[name=lastname]').inputmask({
 		mask: 'a',
+		autoUnmask: true,
 		repeat: 25,
 		greedy: false
 	});
 	$('input[name=firstname]').inputmask({
 		mask: 'a',
+		autoUnmask: true,
 		repeat: 25,
 		greedy: false
 	});
 	$('input[name=middlename]').inputmask({
 		mask: 'a',
+		autoUnmask: true,
 		repeat: 25,
 		greedy: false
 	});
 	$('input[name=organization]').inputmask({
 		mask: 'i',
+		autoUnmask: true,
 		repeat: 25,
 		greedy: false
 	});
 	$('input[name=department]').inputmask({
 		mask: 'i',
+		autoUnmask: true,
 		repeat: 25,
 		greedy: false
 	});
 	$('input[name=post]').inputmask({
 		mask: 'i',
+		autoUnmask: true,
 		repeat: 25,
 		greedy: false
 	});
 	$('input[name=phone]').inputmask({
 		mask: '9',
+		autoUnmask: true,
 		repeat: 11,
 		greedy: false
 	});
 	$('input[name=mail]').inputmask('Regex', { regex: "([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))" });
 	$('input[name=class]').inputmask({
 		mask: 'i',
+		autoUnmask: true,
 		repeat: 60,
 		greedy: false
 	});
 	$('input[name=resource]').inputmask({
 		mask: 'i',
+		autoUnmask: true,
 		repeat: 60,
 		greedy: false
 	});
