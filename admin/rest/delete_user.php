@@ -18,6 +18,5 @@ $message_body = "
 	. "Reply-To: cluster@cluster.ua\r\n"
 	. "Content-type: text/html\r\n"
 	. "X-Mailer: PHP/" . phpversion());
-?>
 unlink($filename);
 echo "OK";

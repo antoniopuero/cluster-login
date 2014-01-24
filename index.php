@@ -299,6 +299,11 @@
 				"cardinality": 1,
 				"prevalidator": null
 			},
+			"e": {
+				"validator": "[a-zA-Z0-9_-@\\.]",
+				"cardinality": 1,
+				"prevalidator": null
+			},
 			"i": {
 				"validator": "[a-zA-Zа-яА-Я0-9ІіЇї -]",
 				"cardinality": 1,
@@ -348,6 +353,12 @@
 			greedy: false
 		});
 		$('input[name=phone]').inputmask('Regex', { regex: "\\+?\\d{0,13}" });
+		$('input[name=mail]').inputmask({
+			mask: 'e',
+			autoUnmask: true,
+			repeat: 60,
+			greedy: false
+		});
 		$('input[name=class]').inputmask({
 			mask: 'i',
 			autoUnmask: true,
