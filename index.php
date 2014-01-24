@@ -347,7 +347,7 @@
 			repeat: 25,
 			greedy: false
 		});
-		$('input[name=phone]').inputmask('regex', { regex: "\\+?\\d{0,13}" });
+		$('input[name=phone]').inputmask('Regex', { regex: "\\+?\\d{0,13}" });
 		$('input[name=class]').inputmask({
 			mask: 'i',
 			autoUnmask: true,
